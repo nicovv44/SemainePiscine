@@ -17,7 +17,7 @@
 		<!-- contenu -->
 		
 		<footer>
-			Hébergé par </br>
+			Hébergé par <br/>
 			&copy; 2017 Mathidle Bridron <a href="mailto:mathilde.bridron@edu.ece.fr">mathilde.bridron@edu.ece.fr</a>, Alexandre Domanchin <a href="mailto:ad162414@edu.ece.fr">alexandre.domanchin@edu.ece.fr</a>, Nicolas VERHELST <a href="mailto:nicolas.verhelst@edu.ece.fr">nicolas.verhelst@edu.ece.fr</a><br/>
 			Nombre de visites : 
 			<?php
