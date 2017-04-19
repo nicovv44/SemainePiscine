@@ -1,5 +1,12 @@
 <!DOCTYPE html>
 <html>
+	<?php /*On ouvre la base de donnée*/
+		require("config.php");
+		$database = 'facebouc';
+		$IDauteur = 1;/*on definit arbitrairement un IDauteur (de la page en cours) pour les tests*/
+		$dbhandle = mysqli_connect(DB_SERVER, DB_USER, DB_PASS);
+		$dbfound = mysqli_select_db($dbhandle, $database);
+	?>
 	<head>
 		<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8" />
 		<title>Mes Amis</title>
@@ -19,25 +26,78 @@
 			</tr>
 		</table>
 		<br>
+		<?php /*On affiche le nombre d'ami dans un cadre*/
+				if($dbfound){
+					/*On recupere le nombre d'ami de l'auteur*/
+					$sql = "SELECT COUNT(*) AS 'nombre' FROM estAmisAvec WHERE IDmembre1 = '$IDauteur'";
+					$reqUTF8 = 'SET NAMES UTF8';//pour avoir les accents OK
+					mysqli_query($dbhandle, $reqUTF8);//pour avoir les accents OK
+					$result = mysqli_query($dbhandle, $sql);
+					while($data = mysqli_fetch_assoc($result)){
+						$nbrAmi = $data['nombre'];
+						echo "<div style='margin-bottom: 20px; border: 2px solid black; width: 250px;'>";
+						echo "Nombre d'ami : " . $nbrAmi . "<br/>";
+						echo "</div>";
+					}
+				}
+				else{
+					echo "Base de donnée non trouvée.";
+				}
+		?>
 		<table class="mes_amis">
 			<tr>
 				<td>photo amis</td><td>nom</td><td>prenom</td><td>degre</td><td>nb_amis</td>
 			</tr>
-			<tr>
-				<td>photo amis</td><td>nom</td><td>prenom</td><td>degre</td><td>nb_amis</td>
-			</tr>
-			<tr>
-				<td>photo amis</td><td>nom</td><td>prenom</td><td>degre</td><td>nb_amis</td>
-			</tr>
-			<tr>
-				<td>photo amis</td><td>nom</td><td>prenom</td><td>degre</td><td>nb_amis</td>
-			</tr>
-			<tr>
-				<td>photo amis</td><td>nom</td><td>prenom</td><td>degre</td><td>nb_amis</td>
-			</tr>
-			<tr>
-				<td>photo amis</td><td>nom</td><td>prenom</td><td>degre</td><td>nb_amis</td>
-			</tr>
+			
+			<?php
+				echo "<tr>";/*Debut de ligne*/
+				
+				
+				if($dbfound){
+					$sql = "SELECT *
+						FROM estAmisAvec 
+						JOIN membre ON estAmisAvec.IDmembre2 = membre.IDmembre
+						WHERE estAmisAvec.IDmembre1 = '$IDauteur'";
+					$reqUTF8 = 'SET NAMES UTF8';//pour avoir les accents OK
+					mysqli_query($dbhandle, $reqUTF8);//pour avoir les accents OK
+					$result = mysqli_query($dbhandle, $sql);
+					while($data = mysqli_fetch_assoc($result)){
+						echo "<div style='margin-bottom: 20px; border: 2px solid black; width: 250px;'>";
+						echo "Photo : " . $data['lienPhotoProfil'] . "<br/>";
+						echo "</div>";
+					}
+				}
+				else{
+					echo "Base de donnée non trouvée.";
+				}
+				
+				/*<td>photo amis</td><td>nom</td><td>prenom</td><td>degre</td><td>nb_amis</td>*/
+				
+				echo "</tr>";/*Fin de ligne*/
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			?>
+			
 		</table>
 		</div>
 		<div class="contact">
@@ -92,4 +152,7 @@
 				}
 			?>
 		</footer>
+	<?php /*On ferme la base de donnée*/
+		mysqli_close($dbhandle);
+	?>
 </html>
