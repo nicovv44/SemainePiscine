@@ -9,17 +9,17 @@
 	<body>
 		<table class="acceuil">
 			<tr>
-				<td><img src="bouc.jpg.png" alt="bouc" style="width:50px;height:50px;"/></td><td>Avec Facebouc, <br> Partagez votre <br> quotidien avec <br> tous vos amis</td>
+				<td><img src="bouc.jpg.png" alt="bouc" style="width:50px;height:50px;"/></td><td><span class="surlignage">Avec Facebouc, <br> Partagez votre <br> quotidien avec <br> tous vos amis</span></td>
 			</tr>
 		</table>
 		<br>
 		<br>
 		<table class="identification_acceuil">
 			<tr>
-				<td>pseudo</td><td>case</td>
+				<td><span class="surlignage">Pseudo</span></td><td>case</td>
 			</tr>
 			<tr>
-				<td>mail</td><td>case</td>
+				<td><span class="surlignage">Mail</span></td><td>case</td>
 			</tr>			
 		</table>
 		<br><br><br><br><br><br>
