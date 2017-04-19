@@ -9,19 +9,19 @@
 	<body>
 		<table class="authentification_entete">
 			<tr>
-				<td>logo</td><td>Authentification</td>
+				<td>logo</td><td><span class="surlignage">Authentification Administrateur</span></td>
 			</tr>
 		</table>
 		<br><br><br><br><br><br>
 		<table class="authentification">
 			<tr>
-				<td>Pseudo</td>
+				<td><span class="surlignage">Pseudo</span></td>
 			</tr>
 			<tr>
 				<td>case</td>
 			</tr>
 			<tr>
-				<td>Mail</td>
+				<td><span class="surlignage">Mail</span></td>
 			</tr>
 			<tr>
 				<td>case</td>

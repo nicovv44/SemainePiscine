@@ -14,20 +14,22 @@
 		</table>
 		<br>
 		<br>
-		<table class="identification_acceuil">
-			<tr>
-				<td><span class="surlignage">Pseudo</span></td><td>case</td>
-			</tr>
-			<tr>
-				<td><span class="surlignage">Mail</span></td><td>case</td>
-			</tr>			
-		</table>
+		<form action="A VOIR" method="post">
+			<table class="identification_acceuil">
+				<tr>
+					<td><span class="surlignage">Pseudo</span></td><td><input type="text" name="pseudo"></td>
+				</tr>	
+				<tr>
+					<td><span class="surlignage">Mail</span></td><td><input type="text" name="mail"></td>
+				</tr>			
+			</table>
 		<br><br><br><br><br><br>
-		<table class="bouton_acceuil">
-			<tr>
-				<td>s'incrire</td><td>connexion</td>
-			</tr>
-		</table>
+			<table class="bouton_acceuil">
+				<tr>
+					<td><input type="button" value=" S'inscrire " onclick="inscription.php"></td><td><INPUT TYPE="submit" NAME="nom" VALUE=" Connexion "></td>
+				</tr>
+			</table>
+		</form>
 		<br><br><br><br><br><br>
 	</body>
 	<footer>

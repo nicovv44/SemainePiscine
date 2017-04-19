@@ -44,6 +44,9 @@ header{
 .infos_apropos{
 	float : right;
 	width: 60%;
+	border-width:2px;
+	border-style:inset;
+	border-color:black;
 }
 .identification_acceuil{
 	width: 40%;
@@ -78,6 +81,18 @@ text-align: left;
 margin-left: 20px;
 float: left;
 width: 50%;
+border-width:2px;
+border-style:inset;
+border-color:black;
+padding-bottom: 50px;
+}
+
+.body_gauche_menu{
+background-color: transparent;
+text-align: left;
+margin-left: 20px;
+float: left;
+width: 50%;
 }
 
 .menu{
@@ -89,7 +104,6 @@ width: 50%;
 .album_menu{
 	text-align: center;
 	background-color: transparent;
-	width: auto;
 	margin-left: 20px;
 	margin-right: auto;
 	width: 50%;
@@ -99,6 +113,8 @@ width: 50%;
 	width: 20%;
 	text-align: left;
 	padding-left: 5px;
+	height: 150px;
+	background-color: white;
 }
 .album{
 	text-align: center;
@@ -124,11 +140,11 @@ width: 50%;
 	text-align: center;
 	padding-top: 5px;
 	padding-bottom: 5px;
-	background-color: white;
+	background-color: transparent;
 	width: 100%;
 }
 .authentification{
-	background-color: white;
+	background-color: transparent;
 	text-align: center;
 	float: center;
 	margin-left: auto;
@@ -138,7 +154,7 @@ width: 50%;
 }
 .boutons_validation{
 	text-align: center;
-	background-color: white;
+	background-color: transparent;
 	width: 50%;
 	margin-left: auto;
 	margin-right: auto;
@@ -149,6 +165,15 @@ width: 50%;
 	text-align: center;
 	margin-left: auto;
 	margin-right: auto;
+	height: auto;
+}
+
+.textarea_exprimez_vous_ici{
+	float: center;
+	text-align: center;
+	padding-left: auto;
+	margin-right: auto;
+	height: auto;
 }
 
 .chronologie_ajouterpiecesjointes{
@@ -161,8 +186,20 @@ width: 50%;
 .commentaire{
 	text-align: left;
 	float: left;
-	margin-left: auto;
+	margin-left: 35px;
 	margin-right: auto;
+	width: 50%;
+	border-width:2px;
+	border-style:inset;
+	border-color:black;
+}
+
+.commentaire_parametre{
+	text-align: left;
+	float: left;
+	margin-left: auto;
+	margin-right: 20px;
+	width: 30%;
 }
 
 .image_publication{
@@ -171,6 +208,9 @@ width: 50%;
 	margin-left: auto;
 	margin-right: auto;
 	text-align: center;
+	border-width:2px;
+	border-style:inset;
+	border-color:black;
 }
 .parametres_publication{
 	width: 90%;
@@ -197,6 +237,17 @@ width: 50%;
 	margin-right: auto;
 	height: auto;
 	width: 100%;
+}
+
+.commentaires_publication{
+	border-width:2px;
+	border-style:inset;
+	border-color:black;
+	width: 90%;
+	background-color: white;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
 }
 /*=========================================================================================*/
 /*liens hypertext*/

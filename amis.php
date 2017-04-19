@@ -10,15 +10,18 @@
 			<td><img src="bouc.jpg.png" alt="avis" style="width:100px;height:100px;"/></td><td><img src="bouc.jpg.png" alt="avis" style="width:150px;height:150px;"/></td><td align="left">nom auteur </td><td align="right">deconnexion</td>
 		</tr>
 	</header>
-	<br><br><br><br><br>
+	<br>
 	<body>
-	<div class="body_gauche">
+	<div class="body_gauche_menu">
 		<table class="menu">
 			<tr>
 				<td><a href="chronologie.php">Mur</a></td><td><a href="aproposvueglobale.php">A propos</a></td><td><a href="amis.php">Amis</a></td><td><a href="photo.php">Photo</a></td>
 			</tr>
 		</table>
-		<br>
+		</div>
+		<br><br><br><br>		
+		<div class="body_gauche">
+		Mes amis
 		<table class="mes_amis">
 			<tr>
 				<td>photo amis</td><td>nom</td><td>prenom</td><td>degre</td><td>nb_amis</td>

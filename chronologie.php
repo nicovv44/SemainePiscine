@@ -10,33 +10,41 @@
 			<td><img src="bouc.jpg.png" alt="avis" style="width:100px;height:100px;"/></td><td><img src="bouc.jpg.png" alt="avis" style="width:150px;height:150px;"/></td><td align="left">nom auteur </td><td align="right">deconnexion</td>
 		</tr>
 	</header>
-	<br><br><br><br><br>
+	<br>
 	<body>
-		<div class="body_gauche">
+		<div class="body_gauche_menu">
 		<table class="menu">
 			<tr>
 				<td><a href="chronologie.php">Mur</a></td><td><a href="aproposvueglobale.php">A propos</a></td><td><a href="amis.php">Amis</a></td><td><a href="photo.php">Photo</a></td>
 			</tr>
 		</table>
+		</div>
+		<br><br><br><br>
+		<form>
+		<div class="body_gauche">
+			<textarea name="textarea_exprimez_vous_ici"rows="4" cols="90">Exprimer vous ici</textarea>
+		</div>
 		<br>
-		<table class="chronologie_exprimezvous">
-			<tr>
-				<td>case blanche avec marqué exprimez vous dedans</td>
-			</tr>
-		</table>
+
+		<div class="body_gauche_menu">
 		<table class="chronologie_ajouterpiecesjointes">
 			<tr><td>bouton + </td><td>Ajouter une pièce jointe</td></tr>
 		</table>
-		<br><br>
+		</div>
+
+		<br>
+
+		<div class="body_gauche">
 		<table class="publication">
-			<table class="commentaire"><tr><td>case commentaire</td><td>bouton + </td><td>paramètre de la publication</td></tr></table>
 			<br>
+			<table class="commentaire"><tr><td><textarea name="textarea_commentaire" rows="4" cols="50">case commentaire</textarea></td></table>
+			<table class="commentaire_parametre"><td>bouton + </td><td>paramètre de la publication</td></tr></table>
+			<br><br>
 			<table class="image_publication"><tr><td>case</td></tr></table>
-			<table class="parametres_publication"><tr><td>bouton + et main</td><td>Nombre de Like/Love/Laugh/Grrr</td></tr></table>
+			<table class="parametres_publication"><tr><td>bouton +</td><td> bouton main</td><td>Nombre de Like/Love/Laugh/Grrr</td></tr></table>
 			<br>
 			<table class="commentaires_publication">
-			
-			<tr>Commentaires :</tr>
+			Commentaires :
 			<tr>
 				<td>Utilisateur1</td><td>Commentaire1</td>
 			</tr>
@@ -46,6 +54,7 @@
 			</table>
 		</table>
 		</div>
+		</form>
 		<div class="contact">
 			<h3>Contacts</h3>
 			<br>
