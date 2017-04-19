@@ -15,9 +15,21 @@
 	<header>
 		<tr>
 			<td><img src="bouc.jpg.png" alt="avis" style="width:100px;height:100px;"/></td><td><img src="bouc.jpg.png" alt="avis" style="width:150px;height:150px;"/></td><td align="left">
-			nom auteur
-			<?php /*On récupère nom et prénom de l'auteur*/
-				
+			<?php /*On récupère et affiche nom et prénom de l'auteur*/
+				if($dbfound){
+					$sql = "SELECT * FROM membre WHERE IDmembre = '$IDauteur'";
+					$reqUTF8 = 'SET NAMES UTF8';//pour avoir les accents OK
+					mysqli_query($dbhandle, $reqUTF8);//pour avoir les accents OK
+					$result = mysqli_query($dbhandle, $sql);
+					while($data = mysqli_fetch_assoc($result)){
+						$nom = $data['nom'];
+						$prenom = $data['prenom'];
+						echo "$prenom $nom";
+					}
+				}
+				else{
+					echo "Base de donnée non trouvée.";
+				}
 			?>
 			</td><td align="right">deconnexion</td>
 		</tr>
