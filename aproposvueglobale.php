@@ -10,46 +10,59 @@
 			<td><img src="bouc.jpg.png" alt="avis" style="width:100px;height:100px;"/></td><td><img src="bouc.jpg.png" alt="avis" style="width:150px;height:150px;"/></td><td align="left">nom auteur </td><td align="right">deconnexion</td>
 		</tr>
 	</header>
-	<br>
-	<body>
-		<div class="body_gauche_menu">
-		<table class="menu">
-			<tr>
-				<td><a href="chronologie.php">Mur</a></td><td><a href="aproposvueglobale.php">A propos</a></td><td><a href="amis.php">Amis</a></td><td><a href="photo.php">Photo</a></td>
-			</tr>
-		</table>
-		</div>
-		<br><br><br><br>
+	<nav>
+			<ul>
+				<li><a href="Chronologie.php">Chronologie</a></li>
+				<li><a class="bontonNavSelected" href="aproposvueglobale.php">A propos</a></li>
+				<li><a href="Amis.php">Amis</a></li>
+				<li><a href="Photos.php">Photos</a></li>
+			</ul>
+		</nav>
 		<div class="body_gauche">
 		<table class="activite">
-			<table class="navigation_apropos">
-				<tr>
-				<a href="aproposvueglobale.php">Vue globale</a>
-				</tr>
-				<br>
-				<tr>
-				<a href="aproposactivite.php">Activités professionnelles</a>
-				</tr>
-				<br>
-				<tr>
-				<a href="aproposhobies.php">Hobies</a>
-				</tr>
-				<br>
-				<tr>
-				<a href="aproposvieprivee.php">Vie privée</a>
-				</tr>
-			</table>
-			<table class="infos_apropos">
-				<tr>
-					<td>Numéro de téléphone</td><td>case</td>
-				</tr>
-				<tr>
-					<td>Habite à</td><td>case</td>
-				</tr>
-				<tr>
-					<td>Travaille à</td><td>case</td>
-				</tr>
-			</table>
+			<tr>
+				<td>
+					<table class="navigation_apropos">
+						<tr>
+							<td>
+							<a href="aproposvueglobale.php">Vue globale</a>
+							</td>
+						</tr>
+						<tr>
+							<td>
+							<a href="aproposactivite.php">Activités professionnelles</a>
+							</td>
+						</tr>
+						<tr>
+							<td>
+							<a href="aproposhobies.php">Hobies</a>
+							</td>
+						</tr>
+						<tr>
+							<td>
+							<a href="aproposvieprivee.php">Vie privée</a>
+							</td>
+						</tr>
+					</table>
+				</td>
+				<td>
+					<table class="infos_apropos">
+						<tr>
+							<td>Numéro de téléphone </td>
+							<td><textarea id="textarea_ajouter_commentaire" name="textarea_ajouter_commentaire" rows="4" cols="38" placeHolder="Ajouter un commentaire..."></textarea></td>
+						</tr>
+						<tr>
+							<td>Habite à</td>
+							<td><textarea id="textarea_ajouter_commentaire" name="textarea_ajouter_commentaire" rows="4" cols="38" placeHolder="Ajouter un commentaire..."></textarea></td>
+						</tr>
+						<tr>
+							<td>Travail à</td>
+							<td><textarea id="textarea_ajouter_commentaire" name="textarea_ajouter_commentaire" rows="4" cols="38" placeHolder="Ajouter un commentaire..."></textarea></td>
+						</tr>
+						
+					</table>
+				</td>
+			</tr>
 		</table>
 		</div>
 		<div class="contact">
