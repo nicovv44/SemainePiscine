@@ -12,7 +12,23 @@
 		<title>Mes Amis</title>
 		<link type="text/css" rel="stylesheet" href="style1.css">
 	</head>
-	<header>
+	
+	<?php /*Construction de la balise <header> pour l'image de couverture*/
+		if($dbfound){
+			$sql = "SELECT * FROM membre WHERE IDmembre = '$IDauteur'";
+			$reqUTF8 = 'SET NAMES UTF8';//pour avoir les accents OK
+			mysqli_query($dbhandle, $reqUTF8);//pour avoir les accents OK
+			$result = mysqli_query($dbhandle, $sql);
+			while($data = mysqli_fetch_assoc($result)){
+				$lienPhotoCouverture = $data['lienPhotoCouverture'];
+				$style = '"'."background-image: url('$lienPhotoCouverture');".'"';
+				echo "<header  style=$style>";
+			}
+		}
+		else{
+			echo "Base de donnée non trouvée.";
+		}
+	?>
 		<img class="miniLogoGauche" src="images/bouc.png" alt="Logo bouc" style="width:50px;height:50px;"/>
 		<tr>
 			<td>
