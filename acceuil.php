@@ -26,7 +26,7 @@
 		<br><br><br><br><br><br>
 			<table class="bouton_acceuil">
 				<tr>
-					<td><input type="button" value=" S'inscrire " onclick="inscription.php"></td><td><INPUT TYPE="submit" NAME="nom" VALUE=" Connexion "></td>
+					<td><a href="inscription.php"><input type="button" value=" S'inscrire "></a></td><td><INPUT TYPE="submit" NAME="nom" VALUE=" Connexion "></td>
 				</tr>
 			</table>
 		</form>
