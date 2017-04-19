@@ -243,7 +243,6 @@ nav a.bontonNavSelected{/*Bouton selectionné*/
 #blocChronologie{
 	display: flex;
 	flex-direction: column;
-	margin-left: 50px;
 }
 
 .body_gauche{
