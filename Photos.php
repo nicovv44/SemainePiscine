@@ -75,91 +75,41 @@
 			<ul>
 				<li><a href="Chronologie.php">Chronologie</a></li>
 				<li><a href="aproposvueglobale.php">A propos</a></li>
-				<li><a class="bontonNavSelected" href="Amis.php">Amis</a></li>
-				<li><a href="Photos.php">Photos</a></li>
+				<li><a href="Amis.php">Amis</a></li>
+				<li><a class="bontonNavSelected" href="Photos.php">Photos</a></li>
 			</ul>
 		</nav>
+		
 		<div class="body_gauche">
-			<?php /*On affiche le nombre d'ami de l'auteur dans un cadre*/
-				if($dbfound){
-					/*On recupere le nombre d'ami de l'auteur*/
-					$sql = "SELECT COUNT(*) AS 'nombre' FROM estAmisAvec WHERE IDmembre1 = '$IDauteur'";
-					$reqUTF8 = 'SET NAMES UTF8';//pour avoir les accents OK
-					mysqli_query($dbhandle, $reqUTF8);//pour avoir les accents OK
-					$result = mysqli_query($dbhandle, $sql);
-					while($data = mysqli_fetch_assoc($result)){
-						$nbrAmi = $data['nombre'];
-						echo "<div style='margin: 20px; border: 2px solid black; width: 250px;'>";
-						echo "Nombre d'ami : " . $nbrAmi . "<br/>";
-						echo "</div>";
-					}
-				}
-				else{
-					echo "Base de donnée non trouvée.";
-				}
-			?>
-			<table class="mes_amis">
-				<tr>
-					<th>Photo amis</th><th></th><th>Nom</th><th></th><th>Prénom</th><th></th><th>Degré d'amitié</th><th></th><th>Nombre d'ami</th>
-				</tr>
+			
+			<div class="bloc_de_photos">
 				
-				<?php /*On affiche les amis*/
+				<?php /*On insère des div de photo*/
 					if($dbfound){
 						$sql = "SELECT *
-							FROM estAmisAvec 
-							JOIN membre ON estAmisAvec.IDmembre2 = membre.IDmembre
-							WHERE estAmisAvec.IDmembre1 = '$IDauteur'";
+							FROM contenu 
+							JOIN publication ON contenu.IDpublication = publication.IDpublication
+							WHERE publication.IDmembre = '$IDauteur'";
 						$reqUTF8 = 'SET NAMES UTF8';//pour avoir les accents OK
 						mysqli_query($dbhandle, $reqUTF8);//pour avoir les accents OK
 						$result = mysqli_query($dbhandle, $sql);
 						while($data = mysqli_fetch_assoc($result)){
-							echo "<tr>";/*Debut de ligne*/
 							
 							/*Photo*/
-							$lienPhoto = $data['lienPhotoProfil'];
-							echo "<td>";
-							echo "<img src='$lienPhoto' alt='Photo ami' style='width:150px;height:150px;'/>";
-							echo "<td/>";
-							
-							/*Nom*/
-							$nom = $data['nom'];
-							echo "<td>";
-							echo "$nom";
-							echo "<td/>";
-							
-							/*Prenom*/
-							$prenom = $data['prenom'];
-							echo "<td>";
-							echo "$prenom";
-							echo "<td/>";
-							
-							/*Degré d'amitié*/
-							$degre = $data['degreDAmitie'];
-							echo "<td>";
-							echo "$degre/5";
-							echo "<td/>";
-							
-							/*Nombre d'ami de l'ami*/
-							$IDami = $data['IDmembre'];
-							$sql2 = "SELECT COUNT(*) AS 'nombre' FROM estAmisAvec WHERE IDmembre1 = '$IDami'";
-							$reqUTF82 = 'SET NAMES UTF8';//pour avoir les accents OK
-							mysqli_query($dbhandle, $reqUTF82);//pour avoir les accents OK
-							$result2 = mysqli_query($dbhandle, $sql2);
-							while($data2 = mysqli_fetch_assoc($result2)){
-								$nbrAmi = $data2['nombre'];
-							}
-							echo "<td>";
-							echo "$nbrAmi";
-							echo "<td/>";
-							
-							echo "</tr>";/*Fin de ligne*/
+							$lienPhoto = $data['lienPhoto'];
+							$type = $data['type'];
+							echo "<div class='unePhoto'>";
+								echo "<a href='$lienPhoto'><img src='$lienPhoto' alt='Photo de l'auteur'/></a>";
+								echo "<div>Type : $type</div>";
+							echo "</div>";
 						}
 					}
 					else{
 						echo "Base de donnée non trouvée.";
-					}
+					}	
 				?>
-			</table>
+				
+			</div>
 		</div>
 		<div class="contact">
 			<h3>Contacts</h3>

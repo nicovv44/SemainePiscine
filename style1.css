@@ -12,6 +12,10 @@ body{
 	justify-content: space-around;
 }
 
+.surlignage{
+	background-color: white;
+}
+
 
 /*=========================================================================================*/
 /*types de texte*/
@@ -283,18 +287,27 @@ nav a.bontonNavSelected{/*Bouton selectionné*/
 	resize:none;
 }
 
-
-
-
-
-
-
-
-
-
-.surlignage{
-	background-color: white;
+/*=========================================================================================*/
+/*page Photos*/
+.bloc_de_photos{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
 }
+
+.unePhoto img{
+	height: 200px;
+}
+
+.unePhoto div{
+	margin-bottom: 20px;
+}
+
+
+
+
+
+
 
 
 
