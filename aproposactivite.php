@@ -6,20 +6,30 @@
 		<link type="text/css" rel="stylesheet" href="style1.css">
 	</head>
 	<header>
+		<img class="miniLogoGauche" src="images/bouc.png" alt="Logo bouc" style="width:50px;height:50px;"/>
 		<tr>
-			<td><img src="bouc.jpg.png" alt="avis" style="width:100px;height:100px;"/></td><td><img src="bouc.jpg.png" alt="avis" style="width:150px;height:150px;"/></td><td align="left">nom auteur </td><td align="right">deconnexion</td>
+			<td>
+				<img src="bouc.jpg.png" alt="avis" style="width:150px;height:150px;"/>
+			</td>
+			<td align="left">
+				nom auteur
+			</td>
+			<td align="right">
+				deconnexion
+			</td>
 		</tr>
 	</header>
-	<br>
+	
 	<body>
-		<div class="body_gauche_menu">
-		<table class="menu">
-			<tr>
-				<td><a href="chronologie.php">Mur</a></td><td><a href="aproposvueglobale.php">A propos</a></td><td><a href="amis.php">Amis</a></td><td><a href="photo.php">Photo</a></td>
-			</tr>
-		</table>
-		</div>
-		<br><br><br><br>
+		<nav>
+			<ul>
+				<li><a href="Chronologie.php">Chronologie</a></li>
+				<li><a class="bontonNavSelected" href="aproposvueglobale.php">A propos</a></li>
+				<li><a href="Amis.php">Amis</a></li>
+				<li><a href="Photos.php">Photos</a></li>
+			</ul>
+		</nav>
+		
 		<div class="body_gauche">
 		<table class="activite">
 			<tr>

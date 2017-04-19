@@ -6,64 +6,96 @@
 		<link type="text/css" rel="stylesheet" href="style1.css">
 	</head>
 	<header>
+		<img class="miniLogoGauche" src="images/bouc.png" alt="Logo bouc" style="width:50px;height:50px;"/>
 		<tr>
-			<td><img src="bouc.jpg.png" alt="avis" style="width:100px;height:100px;"/></td><td><img src="bouc.jpg.png" alt="avis" style="width:150px;height:150px;"/></td><td align="left">nom auteur </td><td align="right">deconnexion</td>
+			<td>
+				<img src="bouc.jpg.png" alt="avis" style="width:150px;height:150px;"/>
+			</td>
+			<td align="left">
+				nom auteur
+			</td>
+			<td align="right">
+				deconnexion
+			</td>
 		</tr>
 	</header>
-	<br>
+
 	<body>
-		<div class="body_gauche_menu">
-		<table class="menu">
-			<tr>
-				<td><a href="chronologie.php">Mur</a></td><td><a href="aproposvueglobale.php">A propos</a></td><td><a href="amis.php">Amis</a></td><td><a href="photo.php">Photo</a></td>
-			</tr>
-		</table>
-		</div>
-		<br><br><br><br>
-		<form>
-		<div class="body_gauche">
-			<textarea name="textarea_exprimez_vous_ici"rows="4" cols="90">Exprimer vous ici</textarea>
-		</div>
-		<br>
+		<nav>
+			<ul>
+				<li><a class="bontonNavSelected" href="Chronologie.php">Chronologie</a></li>
+				<li><a href="aproposvueglobale.php">A propos</a></li>
+				<li><a href="Amis.php">Amis</a></li>
+				<li><a href="Photos.php">Photos</a></li>
+			</ul>
+		</nav>
 
-		<div class="body_gauche_menu">
-		<table class="chronologie_ajouterpiecesjointes">
-			<tr><td>bouton + </td><td>Ajouter une pièce jointe</td></tr>
-		</table>
-		</div>
+		<div id="blocChronologie">
+			<div class="body_gauche">
+				<form id="form_exprimez_vous_ici" method="post" action="form_exprimez_vous_ici_Traitement.php">
+					<textarea id="textarea_exprimez_vous_ici" name="textarea_exprimez_vous_ici" rows="4" cols="70" placeHolder="Exprimez vous ici..."></textarea>
+					<div class="ecarteur">
+						<input type="submit" value="Poster"/>
+						<input type="file" value="pieceJointe"/>
+					</div>
+				</form>
+			</div>
 
-		<br>
+			
 
-		<div class="body_gauche">
-		<table class="publication">
-			<br>
-			<table class="commentaire"><tr><td><textarea name="textarea_commentaire" rows="4" cols="50">case commentaire</textarea></td></table>
-			<table class="commentaire_parametre"><td>bouton + </td><td>paramètre de la publication</td></tr></table>
-			<br><br>
-			<table class="image_publication"><tr><td>case</td></tr></table>
-			<table class="parametres_publication"><tr><td>bouton +</td><td> bouton main</td><td>Nombre de Like/Love/Laugh/Grrr</td></tr></table>
-			<br>
-			<table class="commentaires_publication">
-			Commentaires :
-			<tr>
-				<td>Utilisateur1</td><td>Commentaire1</td>
-			</tr>
-			<tr>
-				<td>Utilisateur2</td><td>Commentaire2</td>
-			</tr>
-			</table>
-		</table>
+			<div class="body_gauche">
+			
+				<p style="font-size: 60px; text-align: center;">Publication</p>
+				
+				<?php /*Affiche le nombre de j'aime, j'adore...*/
+					echo "3 J'aime, 2 J'adore, 0 Je rigole, 0 Grrr";
+				?>
+				
+				<form id="form_avis" method="post" action="form_avis_Traitement.php">
+					<input type="submit" name="jaime" value="J'aime"/>
+					<input type="submit" name="jadore"value="J'adore"/>
+					<input type="submit" name="jerigole"value="Je rigole"/>
+					<input type="submit" name="grrr"value="Grrr"/>
+				</form>
+				
+				<table class="commentaire_publication">
+					<tr>
+						<th>Utilisateur1</th>
+					</tr>
+					<tr>
+						<td>Commentaire1 Commentaire1 Commentaire1 Commentaire1 Commentaire1 Commentaire1 Commentaire1 Commentaire1 Commentaire1 Commentaire1 Commentaire1 </td>
+					</tr>
+				</table>
+				<table class="commentaire_publication">
+					<tr>
+						<th>Utilisateur2</th>
+					</tr>
+					<tr>
+						<td>Commentaire2 Commentaire2 Commentaire2 Commentaire2 Commentaire2 Commentaire2 Commentaire2 Commentaire2 Commentaire2 Commentaire2 Commentaire2 Commentaire2 Commentaire2 Commentaire2 </td>
+					</tr>
+				</table>
+				<?php /*Affichage des commentaires depuis la base de donnée*/
+					/**/
+				?>
+				
+				<form id="ajouter_commentaire" method="post" action="ajouter_commentaire_Traitement.php">
+					<textarea id="textarea_ajouter_commentaire" name="textarea_ajouter_commentaire" rows="4" cols="70" placeHolder="Ajouter un commentaire..."></textarea>
+					<div class="ecarteur">
+						<input type="submit" value="Poster"/>
+						<input type="file" value="pieceJointe"/>
+					</div>
+				</form>
+			</div>
 		</div>
-		</form>
+		
 		<div class="contact">
 			<h3>Contacts</h3>
 			<br>
 			Liste des contacts
 		</div>
 	</body>
-	<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 	<footer>
-			Hébergé par <br/>
+			<a href="ConditionsGenerales.html">Conditions générales</a> <br/>
 			&copy; 2017 Mathidle Bridron <a href="mailto:mathilde.bridron@edu.ece.fr">mathilde.bridron@edu.ece.fr</a>, Alexandre Domanchin <a href="mailto:ad162414@edu.ece.fr">alexandre.domanchin@edu.ece.fr</a>, Nicolas VERHELST <a href="mailto:nicolas.verhelst@edu.ece.fr">nicolas.verhelst@edu.ece.fr</a><br/>
 			Nombre de visites : 
 			<?php

@@ -7,36 +7,33 @@
 	</head>
 
 	<body>
-		<table class="authentification_entete">
-			<tr>
-				<td>logo</td><td><span class="surlignage">Authentification Administrateur</span></td>
-			</tr>
-		</table>
-		<br><br><br><br><br><br>
-		<table class="authentification">
-			<tr>
-				<td><span class="surlignage">Pseudo</span></td>
-			</tr>
-			<tr>
-				<td>case</td>
-			</tr>
-			<tr>
-				<td><span class="surlignage">Mail</span></td>
-			</tr>
-			<tr>
-				<td>case</td>
-			</tr>
-			
-		</table>
-		<table class="boutons_validation">
-			<tr>
-				<td>bouton retour acceuil</td><td>bouton connexion</td>
-			</tr>
-		</table>
-		<br>
+		<img id="imgTypePageA" src="images/bouc.png" alt="Logo bouc"/>
+		
+		<h1 id="h1TypePageA">Authentification administrateur</h1>
+		
+		<form id="formTypePageA" action="A VOIR" method="post">
+			<table id="identification_TypePageA">
+				<tr>
+					<td>Pseudo</td><td><input type="text" name="pseudo"></td>
+				</tr>	
+				<tr>
+					<td>Mail</td><td><input type="text" name="mail"></td>
+				</tr>			
+			</table>
+			<table class="bouton_acceuil">
+				<tr>
+					<td>
+						<a href="index.php"><input type="button" value="Retour accueil"></a>
+					</td>
+					<td>
+						<INPUT TYPE="submit" NAME="nom" VALUE="Authentification">
+					</td>
+				</tr>
+			</table>
+		</form>
 	</body>
 	<footer>
-			Hébergé par <br/>
+			<a href="ConditionsGenerales.html">Conditions générales</a> <br/>
 			&copy; 2017 Mathidle Bridron <a href="mailto:mathilde.bridron@edu.ece.fr">mathilde.bridron@edu.ece.fr</a>, Alexandre Domanchin <a href="mailto:ad162414@edu.ece.fr">alexandre.domanchin@edu.ece.fr</a>, Nicolas VERHELST <a href="mailto:nicolas.verhelst@edu.ece.fr">nicolas.verhelst@edu.ece.fr</a><br/>
 			Nombre de visites : 
 			<?php

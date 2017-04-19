@@ -7,43 +7,34 @@
 	</head>
 
 	<body>
-		<table class="acceuil">
-			<tr>
-				<td><img src="bouc.jpg.png" alt="avis" style="width:50px;height:50px;"/></td><td>Avec Facebouc, <br> Partagez votre <br> quotidien avec <br> tous vos amis</td>
-			</tr>
-		</table>
-		<br>
-		<br>
-		<table class="identification_inscription">
-			<tr>
-				<td>Nom</td><td>case</td>
-			</tr>
-			<tr>
-				<td>Prénom</td><td>case</td>
-			</tr>
-			<tr>
-				<td>Date de naissance</td><td>case</td>
-			</tr>
-			<tr>
-				<td>Mail</td><td>case</td>
-			</tr>
-			<tr>
-				<td><input type="checkbox" id="cbox1" value="checkboxmembre">checkbox membre</td><td><input type="checkbox" id="cbox2" value="checkboxadministrateur">checkbox administrateur</td>
-			</tr>
-			<tr>
-				<td><input type="checkbox" id="cbox3" value="checkboxcg">Il a accepté les connditions générales</td>
-			</tr>		
-		</table>
-		<br><br><br><br><br><br><br><br><br>
-		<table class="bouton_inscription">
-			<tr>
-				<td>Importer auteur depuis la base de données</td><td><a href="acceuil.php">Retour Acceuil</td><td>Inscrire Auteur</a></td>
-			</tr>
-		</table>
-		<br><br><br><br><br><br>
+		<img id="imgTypePageA" src="images/bouc.png" alt="Logo bouc"/>
+		<h1 id="h1TypePageA">Inscription</h1>
+		
+		<div class="box">
+			<form id="formInscription" method="post" action="InscriptionTraitement.php">
+				<input type="text" name="prenom" placeholder="Prénom"><br/>
+				<input type="text" name="nom" placeholder="Nom"><br/>
+				Date de naissance : 
+				<input type="date" name="dateEmbauche"/><br/>
+				<input type="email" name="mail" placeholder="Mail"/><br/>
+				<input type="text" name="pseudo" placeholder="Pseudo"/><br/>
+				<select name="pays" id="pays">
+					<option value="membre">Membre</option>
+					<option value="admin">Administrateur</option>
+				</select><br/>
+				<input type="checkbox" id="cbox3" value="checkboxcg">Il a accepté les <a href="ConditionsGenerales.html">Conditions générales</a>
+				<input type="submit" value="Inscrire auteur"/>
+			</form>
+		</div>
+			
+		<div class="ecarteur">
+			<a href="index.php"><input type="button" value="Retour accueil"></a>	
+			<a href="ImportationAuteur.php"><input type="button" value="Importer des auteurs depuis la base de données"></a>
+		</div>
+		
 	</body>
 	<footer>
-			Hébergé par <br/>
+			<a href="ConditionsGenerales.html">Conditions générales</a> <br/>
 			&copy; 2017 Mathilde Bridron <a href="mailto:mathilde.bridron@edu.ece.fr">mathilde.bridron@edu.ece.fr</a>, Alexandre Domanchin <a href="mailto:ad162414@edu.ece.fr">alexandre.domanchin@edu.ece.fr</a>, Nicolas VERHELST <a href="mailto:nicolas.verhelst@edu.ece.fr">nicolas.verhelst@edu.ece.fr</a><br/>
 			Nombre de visites : 
 			<?php

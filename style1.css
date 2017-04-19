@@ -1,17 +1,32 @@
 body{
 	/*background-image: url("monde.jpg");*/
-	background-color: rgb(100,100,255);
+	background-color: rgb(220,220,255);
 	//font-family: Arial, Helvetica, sans-serif;
 	margin-bottom: 200px;
 }
 
+/*=========================================================================================*/
+/*divers*/
+.ecarteur{
+	display: flex;
+	justify-content: space-around;
+}
 
+
+/*=========================================================================================*/
+/*types de texte*/
+.typeTexteA{
+	font-size: 25px;
+	font-weight: bold;
+}
 
 
 /*=========================================================================================*/
 /*header*/
 header{
-	background-color: white;
+	background-image: url("images/profil.png");
+	border-radius: 5px 5px;
+	box-shadow: 10px 10px 10px;
 	text-align: left;
 	float: center;
 	margin-left: auto;
@@ -20,21 +35,226 @@ header{
 	width: 90%;
 }
 
+.miniLogoGauche{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
 
 
 
 /*=========================================================================================*/
-.acceuil{
+/*nav*/
+nav{
+	display: flex;
+	justify-content: space-around;
+}
+
+nav ul{
+	display: flex;
+	padding: 0px;
+	margin-right: 20px;
+	text-align: center; /*pour centrer les texte dans les cases*/
+	font-weight: bold;
+}
+
+nav li{
+	display: block;/*Pour supprimer les point du unordered list*/
+}
+
+nav a, nav a:visited{
+	display: block;
+	padding: 10px;
+	margin: 3px;
+	width: 130px;/*Largeur des boutons*/
+	background-color: #0000FF;
+	border-style: outset;
+	color: white;/*Couleur du cadre des boutons*/
+	text-decoration: none;/*Pas de souslignage du text de la nav*/
+}
+
+nav a:hover, nav a:visited:hover{/*Souris au dessus d'un bouton*/
+	text-decoration: none;/*Pas de souslignage du text de la nav*/
+	background-color: rgb(101,147,100);
+}
+
+nav a.bontonNavSelected{/*Bouton selectionné*/
+	background-color: rgb(101,147,100);
+}
+
+
+
+
+/*=========================================================================================*/
+/*Accueil*/
+.accueil{
+	margin-top: 100px;
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+	display: flex;
+	justify-content: space-around;
+}
+
+.accueil img{
+	height: 200px;
+}
+
+.titreAccueil{
+	text-align: center;
+	height: 200px;
+	width: 300px;
+	font-size: 60px;
+	font-weight: bold;
+	font-family: 'LearningCurveProRegular', Arial, serif;
+}
+
+#formAccueil{
+	display: flex;
+	flex-direction: column;
+	margin-left: 30px;
+	align-self: flex-end;
+}
+
+.identification_acceuil{
 	width: 40%;
 	background-color: transparent;
 	text-align: center;
-	float: center;
-	margin-left: 20px;
-	margin-right: auto;
-	height: 200px;
-	font-size: 40px;
+	float: right;
+	margin-left: auto;
+	/*margin-right: 100px;*/
+	height: auto;
+	font-size: 15px;
 	font-weight: bold;
 	font-family: 'LearningCurveProRegular', Arial, serif;
+}
+
+.bouton_acceuil{
+	text-align: center;
+	background-color: transparent;
+	margin-left: auto;
+	margin-right: auto;
+	float: center;
+	height: auto;
+	width: 30%;
+}
+
+#slogan{
+	margin-top: 50px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+
+/*=========================================================================================*/
+/*typePageA*/
+
+#imgTypePageA{
+	height: 200px;
+	position: absolute;
+	top: 0px;
+}
+
+#h1TypePageA{
+	text-align: center;
+	margin-top: 200px;
+	margin-bottom: 40px;
+}
+
+#formTypePageA{
+	display: flex;
+	flex-direction: column;
+	margin: auto;
+}
+
+#identification_TypePageA{
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	font-size: 30px;
+	font-weight: bold;
+	font-family: 'LearningCurveProRegular', Arial, serif;
+}
+
+
+/*=========================================================================================*/
+/*conditions generales*/
+
+.conditions_generales{
+	width: 65%;
+	background-color: white;
+	text-align: center;
+	float: center;
+	margin-left: auto;
+	margin-right: auto;
+	height: auto;
+}
+	
+.conditions_entete{
+	background-color: white;
+	width:17%;
+	text-align: center;
+	margin-left: auto;
+	float: center;
+	margin-right: auto;
+	height: auto;
+	font-size: x-large;
+}
+.boutons_cg{
+	width: auto;
+	background-color: white;
+	text-align: center;
+	float: center;
+	margin-left: auto;
+	margin-right: auto;
+	height: auto;
+}
+#conteneur{
+	display:flex;
+	justify-content: space-around;
+}
+
+
+
+
+/*=========================================================================================*/
+/*page inscription*/
+
+#formInscription{
+	
+}
+
+.box{
+	width: 300px;
+	border: 2px solid black;
+	margin: auto;
+	margin-bottom: 30px;
+	padding: 20px;
+}
+
+
+
+
+
+
+/*=========================================================================================*/
+/*page chronologie*/
+#blocChronologie{
+	display: flex;
+	flex-direction: column;
+	margin-left: 50px;
+}
+
+.body_gauche{
+	background-color: white;
+	border-radius: 4px 4px;
+	margin-left: 20px;
+	width: 512px;
+	border-width:2px;
+	border-style:inset;
+	border-color:black;
+	margin-bottom: 10px;
 }
 
 .navigation_apropos{
@@ -46,44 +266,25 @@ header{
 	border-style:inset;
 	border-color:black;
 }
-.identification_acceuil{
-	width: 40%;
-	background-color: transparent;
-	text-align: center;
-	float: right;
-	margin-left: auto;
-	margin-right: 100px;
-	height: auto;
-	font-size: 30px;
-	font-weight: bold;
-	font-family: 'LearningCurveProRegular', Arial, serif;
+
+#textarea_exprimez_vous_ici, #textarea_ajouter_commentaire{
+	resize:none;
 }
 
-.bouton_acceuil{
-	text-align: center;
-	background-color: transparent;
-	margin-left: auto;
-	margin-right: 150px;
-	float: center;
-	height: auto;
-	width: 30%;
 
-}
+
+
+
+
+
+
+
 
 .surlignage{
 	background-color: white;
 }
-.body_gauche{
-background-color: white;
-text-align: left;
-margin-left: 20px;
-float: left;
-width: 50%;
-border-width:2px;
-border-style:inset;
-border-color:black;
-padding-bottom: 50px;
-}
+
+
 
 .body_gauche_menu{
 background-color: transparent;
@@ -238,16 +439,18 @@ width: 50%;
 	width: 100%;
 }
 
-.commentaires_publication{
-	border-width:2px;
+.commentaire_publication{
+	border-width:0px;
 	border-style:inset;
 	border-color:black;
-	width: 90%;
-	background-color: white;
-	margin-left: auto;
-	margin-right: auto;
-	text-align: center;
+	width: 100%;
+	margin-bottom: 10px;
 }
+
+.commentaire_publication th{
+	text-align: left;
+}
+
 /*=========================================================================================*/
 /*liens hypertext*/
 a, a:visited{
