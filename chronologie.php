@@ -92,50 +92,73 @@
 			</div>
 
 			
+			<?php /*On recupère le nombre de publication*/
+				if($dbfound){
+					$sql = "SELECT COUNT(*) AS 'nombre' 
+						FROM contenu 
+						JOIN publication ON contenu.IDpublication = publication.IDpublication 
+						WHERE publication.IDmembre = '$IDauteur';";
+					$reqUTF8 = 'SET NAMES UTF8';//pour avoir les accents OK
+					mysqli_query($dbhandle, $reqUTF8);//pour avoir les accents OK
+					$result = mysqli_query($dbhandle, $sql);
+					while($data = mysqli_fetch_assoc($result)){
+						$nbrPublication = $data['nombre'];
+						echo "<div style='margin: 20px; border: 2px solid black; width: 250px;'>";
+						echo "Nombre de publication : " . $nbrPublication . "<br/>";
+						echo "</div>";
+					}
+				}
+				else{
+					echo "Base de donnée non trouvée.";
+				}
+			?>
 
-			<div class="body_gauche">
 			
-				<p style="font-size: 60px; text-align: center;">Publication</p>
-				
-				<?php /*Affiche le nombre de j'aime, j'adore...*/
-					echo "3 J'aime, 2 J'adore, 0 Je rigole, 0 Grrr";
-				?>
-				
-				<form id="form_avis" method="post" action="form_avis_Traitement.php">
-					<input type="submit" name="jaime" value="J'aime"/>
-					<input type="submit" name="jadore"value="J'adore"/>
-					<input type="submit" name="jerigole"value="Je rigole"/>
-					<input type="submit" name="grrr"value="Grrr"/>
-				</form>
-				
-				<table class="commentaire_publication">
-					<tr>
-						<th>Utilisateur1</th>
-					</tr>
-					<tr>
-						<td>Commentaire1 Commentaire1 Commentaire1 Commentaire1 Commentaire1 Commentaire1 Commentaire1 Commentaire1 Commentaire1 Commentaire1 Commentaire1 </td>
-					</tr>
-				</table>
-				<table class="commentaire_publication">
-					<tr>
-						<th>Utilisateur2</th>
-					</tr>
-					<tr>
-						<td>Commentaire2 Commentaire2 Commentaire2 Commentaire2 Commentaire2 Commentaire2 Commentaire2 Commentaire2 Commentaire2 Commentaire2 Commentaire2 Commentaire2 Commentaire2 Commentaire2 </td>
-					</tr>
-				</table>
-				<?php /*Affichage des commentaires depuis la base de donnée*/
-					/**/
-				?>
-				
-				<form id="ajouter_commentaire" method="post" action="ajouter_commentaire_Traitement.php">
-					<textarea id="textarea_ajouter_commentaire" name="textarea_ajouter_commentaire" rows="4" cols="70" placeHolder="Ajouter un commentaire..."></textarea>
-					<div class="ecarteur">
-						<input type="submit" value="Poster"/>
-						<input type="file" value="pieceJointe"/>
-					</div>
-				</form>
-			</div>
+			<?php /*On affiche les publication ===============================================================*/
+				if($dbfound){
+					$sql = "SELECT * 
+						FROM contenu 
+						JOIN publication ON contenu.IDpublication = publication.IDpublication 
+						WHERE publication.IDmembre = '$IDauteur';";
+					$reqUTF8 = 'SET NAMES UTF8';//pour avoir les accents OK
+					mysqli_query($dbhandle, $reqUTF8);//pour avoir les accents OK
+					$result = mysqli_query($dbhandle, $sql);
+					while($data = mysqli_fetch_assoc($result)){
+						echo "<div class='body_gauche'>";
+							echo "<p style='font-size: 60px; text-align: center;'>Publication</p>";
+							echo "
+								<form id='form_avis' method='post' action='form_avis_Traitement.php'>
+									<input type='submit' name='jaime' value='Jaime'/>
+									<input type='submit' name='jadore' value='Jadore'/>
+									<input type='submit' name='jerigole' value='Je rigole'/>
+									<input type='submit' name='grrr' value='Grrr'/>
+								</form>";
+							echo "
+								<table class='commentaire_publication'>
+									<tr>
+										<th>Utilisateur1</th>
+									</tr>
+									<tr>
+										<td>Commentaire1 Commentaire1 Commentaire1 Commentaire1 Commentaire1 Commentaire1 Commentaire1 Commentaire1 Commentaire1 Commentaire1 Commentaire1 </td>
+									</tr>
+								</table>";
+							echo "
+								<form id='ajouter_commentaire' method='post' action='ajouter_commentaire_Traitement.php'>
+									<textarea id='textarea_ajouter_commentaire' name='textarea_ajouter_commentaire' rows='4' cols='70' placeHolder='Ajouter un commentaire...'></textarea>
+									<div class='ecarteur'>
+										<input type='submit' value='Poster'/>
+										<input type='file' value='pieceJointe'/>
+									</div>
+								</form>";
+							
+						echo "</div>";
+					}
+				}
+				else{
+					echo "Base de donnée non trouvée.";
+				}
+			?>
+			
 		</div>
 		
 		<div class="contact">
