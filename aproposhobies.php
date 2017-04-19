@@ -6,8 +6,17 @@
 		<link type="text/css" rel="stylesheet" href="style1.css">
 	</head>
 	<header>
+		<img class="miniLogoGauche" src="images/bouc.png" alt="Logo bouc" style="width:50px;height:50px;"/>
 		<tr>
-			<td><img src="bouc.jpg.png" alt="avis" style="width:100px;height:100px;"/></td><td><img src="bouc.jpg.png" alt="avis" style="width:150px;height:150px;"/></td><td align="left">nom auteur </td><td align="right">deconnexion</td>
+			<td>
+				<img src="bouc.jpg.png" alt="avis" style="width:150px;height:150px;"/>
+			</td>
+			<td align="left">
+				nom auteur
+			</td>
+			<td align="right">
+				deconnexion
+			</td>
 		</tr>
 	</header>
 	<body>
