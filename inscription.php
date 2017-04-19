@@ -33,6 +33,7 @@
 		</div>
 		
 	</body>
+	
 	<footer>
 			<a href="ConditionsGenerales.html">Conditions générales</a> <br/>
 			&copy; 2017 Mathilde Bridron <a href="mailto:mathilde.bridron@edu.ece.fr">mathilde.bridron@edu.ece.fr</a>, Alexandre Domanchin <a href="mailto:ad162414@edu.ece.fr">alexandre.domanchin@edu.ece.fr</a>, Nicolas VERHELST <a href="mailto:nicolas.verhelst@edu.ece.fr">nicolas.verhelst@edu.ece.fr</a><br/>

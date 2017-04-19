@@ -1,5 +1,12 @@
 <!DOCTYPE html>
 <html>
+	<?php /*On ouvre la base de donnée*/
+		require("config.php");
+		$database = 'facebouc';
+		$IDauteur = 2;/*on definit arbitrairement un IDauteur (de la page en cours) pour les tests*/
+		$dbhandle = mysqli_connect(DB_SERVER, DB_USER, DB_PASS);
+		$dbfound = mysqli_select_db($dbhandle, $database);
+	?>
 	<head>
 		<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8" />
 		<title>A Propos</title>
@@ -9,16 +16,44 @@
 		<img class="miniLogoGauche" src="images/bouc.png" alt="Logo bouc" style="width:50px;height:50px;"/>
 		<tr>
 			<td>
-				<img src="bouc.jpg.png" alt="avis" style="width:150px;height:150px;"/>
+			<?php /*On récupère et affiche la photo de profil de l'auteur*/
+				if($dbfound){
+					$sql = "SELECT * FROM membre WHERE IDmembre = '$IDauteur'";
+					$reqUTF8 = 'SET NAMES UTF8';//pour avoir les accents OK
+					mysqli_query($dbhandle, $reqUTF8);//pour avoir les accents OK
+					$result = mysqli_query($dbhandle, $sql);
+					while($data = mysqli_fetch_assoc($result)){
+						$lienPhotoProfil = $data['lienPhotoProfil'];
+						echo "<img class='photoProfil' src='$lienPhotoProfil' alt='Photo profil auteur' style='width:150px;height:150px;'/>";
+					}
+				}
+				else{
+					echo "Base de donnée non trouvée.";
+				}
+			?>
 			</td>
 			<td align="left">
-				nom auteur
+			<?php /*On récupère et affiche nom et prénom de l'auteur*/
+				if($dbfound){
+					$sql = "SELECT * FROM membre WHERE IDmembre = '$IDauteur'";
+					$reqUTF8 = 'SET NAMES UTF8';//pour avoir les accents OK
+					mysqli_query($dbhandle, $reqUTF8);//pour avoir les accents OK
+					$result = mysqli_query($dbhandle, $sql);
+					while($data = mysqli_fetch_assoc($result)){
+						$nom = $data['nom'];
+						$prenom = $data['prenom'];
+						echo "<span class='typeTexteB'>$prenom $nom</span>";
+					}
+				}
+				else{
+					echo "Base de donnée non trouvée.";
+				}
+			?>
 			</td>
-			<td align="right">
-				deconnexion
-			</td>
+			<a href="index.php"><input type="submit" value="Deconnexion"/></a>
 		</tr>
 	</header>
+	
 	<body>
 		<nav>
 			<ul>
@@ -82,9 +117,9 @@
 			Liste des contacts
 		</div>
 	</body>
-	<br><br><br><br><br><br><br><br><br><br><br><br>
+	
 	<footer>
-			Hébergé par <br/>
+			<a href="ConditionsGenerales.html">Conditions générales</a> <br/>
 			&copy; 2017 Mathidle Bridron <a href="mailto:mathilde.bridron@edu.ece.fr">mathilde.bridron@edu.ece.fr</a>, Alexandre Domanchin <a href="mailto:ad162414@edu.ece.fr">alexandre.domanchin@edu.ece.fr</a>, Nicolas VERHELST <a href="mailto:nicolas.verhelst@edu.ece.fr">nicolas.verhelst@edu.ece.fr</a><br/>
 			Nombre de visites : 
 			<?php
@@ -128,4 +163,7 @@
 				}
 			?>
 		</footer>
+	<?php /*On ferme la base de donnée*/
+		mysqli_close($dbhandle);
+	?>
 </html>

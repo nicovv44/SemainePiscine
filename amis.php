@@ -24,7 +24,7 @@
 					$result = mysqli_query($dbhandle, $sql);
 					while($data = mysqli_fetch_assoc($result)){
 						$lienPhotoProfil = $data['lienPhotoProfil'];
-						echo "<img src='$lienPhotoProfil' alt='Photo profil auteur' style='width:150px;height:150px;'/>";
+						echo "<img class='photoProfil' src='$lienPhotoProfil' alt='Photo profil auteur' style='width:150px;height:150px;'/>";
 					}
 				}
 				else{
@@ -42,7 +42,7 @@
 					while($data = mysqli_fetch_assoc($result)){
 						$nom = $data['nom'];
 						$prenom = $data['prenom'];
-						echo "$prenom $nom";
+						echo "<span class='typeTexteB'>$prenom $nom</span>";
 					}
 				}
 				else{
@@ -50,12 +50,10 @@
 				}
 			?>
 			</td>
-			<td align="right">
-				deconnexion
-			</td>
+			<a href="index.php"><input type="submit" value="Deconnexion"/></a>
 		</tr>
 	</header>
-	<br>
+	
 	<body>
 		<nav>
 			<ul>
@@ -66,7 +64,6 @@
 			</ul>
 		</nav>
 	<div class="body_gauche">
-		Amis:
 		<?php /*On affiche le nombre d'ami de l'auteur dans un cadre*/
 				if($dbfound){
 					/*On recupere le nombre d'ami de l'auteur*/
@@ -76,7 +73,7 @@
 					$result = mysqli_query($dbhandle, $sql);
 					while($data = mysqli_fetch_assoc($result)){
 						$nbrAmi = $data['nombre'];
-						echo "<div style='margin-bottom: 20px; border: 2px solid black; width: 250px;'>";
+						echo "<div style='margin: 20px; border: 2px solid black; width: 250px;'>";
 						echo "Nombre d'ami : " . $nbrAmi . "<br/>";
 						echo "</div>";
 					}
@@ -87,7 +84,7 @@
 		?>
 		<table class="mes_amis">
 			<tr>
-				<td>photo amis</td><td></td><td>nom</td><td></td><td>prenom</td><td></td><td>degre</td><td></td><td>nb_amis</td>
+				<th>Photo amis</th><th></th><th>Nom</th><th></th><th>Prénom</th><th></th><th>Degré d'amitié</th><th></th><th>Nombre d'ami</th>
 			</tr>
 			
 			<?php /*On affiche les amis*/
@@ -105,7 +102,7 @@
 						/*Photo*/
 						$lienPhoto = $data['lienPhotoProfil'];
 						echo "<td>";
-						echo "<img src='$lienPhoto' alt='Photo ami'/>";
+						echo "<img src='$lienPhoto' alt='Photo ami' style='width:150px;height:150px;'/>";
 						echo "<td/>";
 						
 						/*Nom*/
@@ -181,9 +178,8 @@
 			Liste des contacts
 		</div>
 	</body>
-	<br><br><br><br><br><br><br><br><br><br><br><br>
 	<footer>
-			Hébergé par <br/>
+			<a href="ConditionsGenerales.html">Conditions générales</a> <br/>
 			&copy; 2017 Mathidle Bridron <a href="mailto:mathilde.bridron@edu.ece.fr">mathilde.bridron@edu.ece.fr</a>, Alexandre Domanchin <a href="mailto:ad162414@edu.ece.fr">alexandre.domanchin@edu.ece.fr</a>, Nicolas VERHELST <a href="mailto:nicolas.verhelst@edu.ece.fr">nicolas.verhelst@edu.ece.fr</a><br/>
 			Nombre de visites : 
 			<?php
