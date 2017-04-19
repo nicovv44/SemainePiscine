@@ -3,7 +3,7 @@
 	<?php /*On ouvre la base de donnée*/
 		require("config.php");
 		$database = 'facebouc';
-		$IDauteur = 1;/*on definit arbitrairement un IDauteur (de la page en cours) pour les tests*/
+		$IDauteur = 2;/*on definit arbitrairement un IDauteur (de la page en cours) pour les tests*/
 		$dbhandle = mysqli_connect(DB_SERVER, DB_USER, DB_PASS);
 		$dbfound = mysqli_select_db($dbhandle, $database);
 	?>
@@ -14,7 +14,12 @@
 	</head>
 	<header>
 		<tr>
-			<td><img src="bouc.jpg.png" alt="avis" style="width:100px;height:100px;"/></td><td><img src="bouc.jpg.png" alt="avis" style="width:150px;height:150px;"/></td><td align="left">nom auteur </td><td align="right">deconnexion</td>
+			<td><img src="bouc.jpg.png" alt="avis" style="width:100px;height:100px;"/></td><td><img src="bouc.jpg.png" alt="avis" style="width:150px;height:150px;"/></td><td align="left">
+			nom auteur
+			<?php /*On récupère nom et prénom de l'auteur*/
+				
+			?>
+			</td><td align="right">deconnexion</td>
 		</tr>
 	</header>
 	<br><br><br><br><br>
@@ -26,7 +31,7 @@
 			</tr>
 		</table>
 		<br>
-		<?php /*On affiche le nombre d'ami dans un cadre*/
+		<?php /*On affiche le nombre d'ami de l'auteur dans un cadre*/
 				if($dbfound){
 					/*On recupere le nombre d'ami de l'auteur*/
 					$sql = "SELECT COUNT(*) AS 'nombre' FROM estAmisAvec WHERE IDmembre1 = '$IDauteur'";
@@ -46,13 +51,10 @@
 		?>
 		<table class="mes_amis">
 			<tr>
-				<td>photo amis</td><td>nom</td><td>prenom</td><td>degre</td><td>nb_amis</td>
+				<td>photo amis</td><td></td><td>nom</td><td></td><td>prenom</td><td></td><td>degre</td><td></td><td>nb_amis</td>
 			</tr>
 			
-			<?php
-				echo "<tr>";/*Debut de ligne*/
-				
-				
+			<?php /*On affiche les amis*/
 				if($dbfound){
 					$sql = "SELECT *
 						FROM estAmisAvec 
@@ -62,9 +64,46 @@
 					mysqli_query($dbhandle, $reqUTF8);//pour avoir les accents OK
 					$result = mysqli_query($dbhandle, $sql);
 					while($data = mysqli_fetch_assoc($result)){
-						echo "<div style='margin-bottom: 20px; border: 2px solid black; width: 250px;'>";
-						echo "Photo : " . $data['lienPhotoProfil'] . "<br/>";
-						echo "</div>";
+						echo "<tr>";/*Debut de ligne*/
+						
+						/*Photo*/
+						$lienPhoto = $data['lienPhotoProfil'];
+						echo "<td>";
+						echo "<img src='$lienPhoto' alt='Photo ami'/>";
+						echo "<td/>";
+						
+						/*Nom*/
+						$nom = $data['nom'];
+						echo "<td>";
+						echo "$nom";
+						echo "<td/>";
+						
+						/*Prenom*/
+						$prenom = $data['prenom'];
+						echo "<td>";
+						echo "$prenom";
+						echo "<td/>";
+						
+						/*Degré d'amitié*/
+						$degre = $data['degreDAmitie'];
+						echo "<td>";
+						echo "$degre/5";
+						echo "<td/>";
+						
+						/*Nombre d'ami de l'ami*/
+						$IDami = $data['IDmembre'];
+						$sql2 = "SELECT COUNT(*) AS 'nombre' FROM estAmisAvec WHERE IDmembre1 = '$IDami'";
+						$reqUTF82 = 'SET NAMES UTF8';//pour avoir les accents OK
+						mysqli_query($dbhandle, $reqUTF82);//pour avoir les accents OK
+						$result2 = mysqli_query($dbhandle, $sql2);
+						while($data2 = mysqli_fetch_assoc($result2)){
+							$nbrAmi = $data2['nombre'];
+						}
+						echo "<td>";
+						echo "$nbrAmi";
+						echo "<td/>";
+						
+						echo "</tr>";/*Fin de ligne*/
 					}
 				}
 				else{
@@ -73,7 +112,7 @@
 				
 				/*<td>photo amis</td><td>nom</td><td>prenom</td><td>degre</td><td>nb_amis</td>*/
 				
-				echo "</tr>";/*Fin de ligne*/
+				
 				
 				
 				
