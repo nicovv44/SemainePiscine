@@ -22,37 +22,48 @@
 		<br><br><br><br>
 		<div class="body_gauche">
 		<table class="activite">
-			<table class="navigation_apropos">
-				<tr>
-				<a href="aproposvueglobale.php">Vue globale</a>
-				</tr>
-				<br>
-				<tr>
-				<a href="aproposactivite.php">Activités professionnelles</a>
-				</tr>
-				<br>
-				<tr>
-				<a href="aproposhobies.php">Hobies</a>
-				</tr>
-				<br>
-				<tr>
-				<a href="aproposvieprivee.php">Vie privée</a>
-				</tr>
-			</table>
-			<table class="infos_apropos">
-				<tr>
-					<td>Travaille à </td><td>case</td>
-				</tr>
-				<tr>
-					<td>Domaine</td><td>case</td>
-				</tr>
-				<tr>
-					<td>Stage/Jobs</td><td>case</td>
-				</tr>
-				<tr>
-					<td>Ecoles effectuée</td><td>case</td>
-				</tr>
-			</table>
+			<tr>
+				<td>
+					<table class="navigation_apropos">
+						<tr>
+							<td>
+							<a href="aproposvueglobale.php">Vue globale</a>
+							</td>
+						</tr>
+						<tr>
+							<td>
+							<a href="aproposactivite.php">Activités professionnelles</a>
+							</td>
+						</tr>
+						<tr>
+							<td>
+							<a href="aproposhobies.php">Hobies</a>
+							</td>
+						</tr>
+						<tr>
+							<td>
+							<a href="aproposvieprivee.php">Vie privée</a>
+							</td>
+						</tr>
+					</table>
+				</td>
+				<td>
+					<table class="infos_apropos">
+						<tr>
+							<td>Travaille à </td><td>case</td>
+						</tr>
+						<tr>
+							<td>Domaine</td><td>case</td>
+						</tr>
+						<tr>
+							<td>Stage/Jobs</td><td>case</td>
+						</tr>
+						<tr>
+							<td>Ecoles effectuée</td><td>case</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
 		</table>
 		</div>
 		<div class="contact">
