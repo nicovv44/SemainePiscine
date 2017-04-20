@@ -25,19 +25,19 @@
 		/*On insert le membre dans la base de donnée*/
 		if($dbfound){
 			echo "Base de donnée trouvée<br/>";
-			if(isset($_POST['cg']) && isset($_POST['mail']) && isset($_POST['pseudo'])){
+			if(isset($_POST['cg']) && (!$_POST['mail']=='') && (!$_POST['pseudo']=='')){
 				$sql = "INSERT INTO membre(adresseMail, pseudo, nom, prenom, statut, dateNaissance) VALUES ('$mail', '$pseudo', '$nom', '$prenom', '$statut', '$dateNaissance')";
 				$reqUTF8 = 'SET NAMES UTF8';//pour avoir les accents OK
 				mysqli_query($dbhandle, $reqUTF8);//pour avoir les accents OK
 				if(mysqli_query($dbhandle, $sql)){
-					echo "Membre ajouté<br/>";
+					echo "<span style='font-weight: bold;'>Membre ajouté</span><br/>";
 				}
 			}
 			else{
 				if(!isset($_POST['cg'])){echo "Conditions générales n'ont pas été acceptées<br/>";}
-				if(!isset($_POST['mail'])){echo "Mail absent<br/>";}
-				if(!isset($_POST['pseudo'])){echo "Pseudo absent<br/>";}
-				echo "Membre non ajouté<br/>";
+				if($_POST['mail']==''){echo "Mail absent<br/>";}
+				if($_POST['pseudo']==''){echo "Pseudo absent<br/>";}
+				echo "<span style='color: red; font-weight: bold;'>Membre non ajouté<span><br/>";
 			}
 		}
 		else{
