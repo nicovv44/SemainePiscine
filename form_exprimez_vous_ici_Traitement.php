@@ -18,8 +18,13 @@
 		echo $erreur;
 		
 		/*On créer un nom unique au fichier*/
-		$IDimage = uniqid();
-		$nomFichierAvecExtension = $IDimage.".".$extension_upload;
+		if($_FILES['pieceJointe']['size']>10){
+			$IDimage = uniqid();
+			$nomFichierAvecExtension = $IDimage.".".$extension_upload;
+		}
+		else{
+			$nomFichierAvecExtension="";
+		}
 		
 		/*On déplace le fichier et le renomant avec son nom unique*/
 		$lienTotalFichier = "images/$nomFichierAvecExtension";
@@ -28,7 +33,7 @@
 		
 		/*On insert la publication (type photo) dans la base de donnée*/
 		if($dbfound){
-			echo "base trouvée";
+			echo "base trouvée <br/>";
 			$timeStamp = time();
 			$sql = "INSERT INTO publication(type, timeStamp, IDmembre) VALUES ('photo', FROM_UNIXTIME($timeStamp), '$IDauteur')";
 			$reqUTF8 = 'SET NAMES UTF8';//pour avoir les accents OK
@@ -38,7 +43,7 @@
 			}
 		}
 		else{
-			echo "Base de donnée non trouvée.";
+			echo "Base de donnée non trouvée.<br/>";
 		}
 		
 		/*On récupère l'identifiant de la publication qui vien d'être ajoutée à la base de donnée*/
@@ -54,7 +59,7 @@
 			}
 		}
 		else{
-			echo "Base de donnée non trouvée.";
+			echo "Base de donnée non trouvée.<br/>";
 		}
 		
 		/*On insert la  photo/texte (contenu) dans la base de donnée*/
@@ -70,13 +75,13 @@
 			
 		}
 		else{
-			echo "Base de donnée non trouvée.";
+			echo "Base de donnée non trouvée.<br/>";
 		}
 		
 		
 		/*On redirige vers la page chronologie (la page de provenance)*/
-		/*header('Location: Chronologie.php');*/
-		header('refresh:5;url=Chronologie.php');//pour le degub
+		header('Location: Chronologie.php');
+		/*header('refresh:5;url=Chronologie.php');*///pour le debub
 		exit();
 		
 		

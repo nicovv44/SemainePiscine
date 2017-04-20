@@ -130,7 +130,9 @@
 							$texte = $data['texte'];//on recupere le texte de la publication
 							echo "<p style='font-size: 20px;'>$texte</p>";
 							$lienPhoto = $data['lienPhoto'];//on recupere le lien de la photo de la publication (on suppose qu'il y a une photo (bug si il n'y en a pas...)
-							echo "<a href='$lienPhoto'><img src='$lienPhoto' alt='Photo de la publication' style='width: 400px'/></a>";
+							if($lienPhoto != 'images/'){
+								echo "<a href='$lienPhoto'><img src='$lienPhoto' alt='Photo de la publication' style='width: 400px'/></a>";
+							}
 							echo "
 								<form id='form_avis' method='post' action='form_avis_Traitement.php'>
 									<input type='submit' name='jaime' value='Jaime'/>
