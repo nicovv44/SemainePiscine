@@ -109,17 +109,41 @@
 				</td>
 				<td>
 					<table class="infos_apropos">
+						<?php /*On recupere les infos à afficher*/
+							if($dbfound){
+								$sql = "SELECT *
+									FROM membre
+									WHERE IDmembre = '$IDauteur';";
+								$reqUTF8 = 'SET NAMES UTF8';//pour avoir les accents OK
+								mysqli_query($dbhandle, $reqUTF8);//pour avoir les accents OK
+								$result = mysqli_query($dbhandle, $sql);
+								while($data = mysqli_fetch_assoc($result)){
+									$telephone = $data['telephone'];
+									$adresse = $data['adresse'];
+									$entrepriseDeTravail = $data['entrepriseDeTravail'];
+								}
+							}
+							else{
+								echo "Base de donnée non trouvée.";
+							}
+						?>
 						<tr>
 							<td>Numéro de téléphone </td>
-							<td><textarea id="textarea_ajouter_commentaire" name="textarea_ajouter_commentaire" rows="4" cols="38" placeHolder="Ajouter un commentaire..."></textarea></td>
+							<td><textarea id="textarea_ajouter_commentaire" name="textarea_ajouter_commentaire" rows="4" cols="38">
+								<?php echo $telephone; ?>
+							</textarea></td>
 						</tr>
 						<tr>
 							<td>Habite à</td>
-							<td><textarea id="textarea_ajouter_commentaire" name="textarea_ajouter_commentaire" rows="4" cols="38" placeHolder="Ajouter un commentaire..."></textarea></td>
+							<td><textarea id="textarea_ajouter_commentaire" name="textarea_ajouter_commentaire" rows="4" cols="38">
+								<?php echo $adresse; ?>
+							</textarea></td>
 						</tr>
 						<tr>
 							<td>Travail à</td>
-							<td><textarea id="textarea_ajouter_commentaire" name="textarea_ajouter_commentaire" rows="4" cols="38" placeHolder="Ajouter un commentaire..."></textarea></td>
+							<td><textarea id="textarea_ajouter_commentaire" name="textarea_ajouter_commentaire" rows="4" cols="38"">
+								<?php echo $entrepriseDeTravail; ?>
+							</textarea></td>
 						</tr>
 						
 					</table>
