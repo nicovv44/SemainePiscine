@@ -98,10 +98,12 @@
 							/*Photo*/
 							$lienPhoto = $data['lienPhoto'];
 							$type = $data['type'];
-							echo "<div class='unePhoto'>";
-								echo "<a href='$lienPhoto'><img src='$lienPhoto' alt='Photo de l'auteur'/></a>";
-								echo "<div>Type : $type</div>";
-							echo "</div>";
+							if($lienPhoto != 'images/'){
+								echo "<div class='unePhoto'>";
+									echo "<a href='$lienPhoto'><img src='$lienPhoto' alt='Photo de l'auteur'/></a>";
+									echo "<div>Type : $type</div>";
+								echo "</div>";
+							}
 						}
 					}
 					else{
