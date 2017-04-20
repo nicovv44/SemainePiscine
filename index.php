@@ -12,7 +12,7 @@
 			<div class="titreAccueil">
 				<div>Facebouc</div>
 			</div>
-			<form id="formAccueil" action="A VOIR" method="post">
+			<form id="formAccueil" action="traitement_connexion.php" method="post">
 				<span class="typeTexteA">Connexion</span>
 				<table class="identification_acceuil">
 					<tr>
