@@ -109,21 +109,48 @@
 				</td>
 				<td>
 					<table class="infos_apropos">
+						<?php /*On recupere les infos à afficher*/
+							if($dbfound){
+								$sql = "SELECT *
+									FROM membre
+									WHERE IDmembre = '$IDauteur';";
+								$reqUTF8 = 'SET NAMES UTF8';//pour avoir les accents OK
+								mysqli_query($dbhandle, $reqUTF8);//pour avoir les accents OK
+								$result = mysqli_query($dbhandle, $sql);
+								while($data = mysqli_fetch_assoc($result)){
+									$hobby1 = $data['hobby1'];
+									$hobby2 = $data['hobby2'];
+									$hobby3 = $data['hobby3'];
+									$hobby4 = $data['hobby4'];
+								}
+							}
+							else{
+								echo "Base de donnée non trouvée.";
+							}
+						?>
 						<tr>
 							<td>Hobie 1 </td>
-							<td><textarea id="textarea_ajouter_commentaire" name="textarea_ajouter_commentaire" rows="4" cols="37" placeHolder="Ajouter un commentaire..."></textarea></td>
+							<td><textarea id="textarea_ajouter_commentaire" name="textarea_ajouter_commentaire" rows="4" cols="38">
+								<?php echo $hobby1; ?>
+							</textarea></td>
 						</tr>
 						<tr>
 							<td>Hobie 2</td>
-							<td><textarea id="textarea_ajouter_commentaire" name="textarea_ajouter_commentaire" rows="4" cols="37" placeHolder="Ajouter un commentaire..."></textarea></td>
+							<td><textarea id="textarea_ajouter_commentaire" name="textarea_ajouter_commentaire" rows="4" cols="38">
+								<?php echo $hobby2; ?>
+							</textarea></td>
 						</tr>
 						<tr>
 							<td>Hobie 3</td>
-							<td><textarea id="textarea_ajouter_commentaire" name="textarea_ajouter_commentaire" rows="4" cols="37" placeHolder="Ajouter un commentaire..."></textarea></td>
+							<td><textarea id="textarea_ajouter_commentaire" name="textarea_ajouter_commentaire" rows="4" cols="38">
+								<?php echo $hobby3; ?>
+							</textarea></td>
 						</tr>
 						<tr>
 							<td>Hobie 4</td>
-							<td><textarea id="textarea_ajouter_commentaire" name="textarea_ajouter_commentaire" rows="4" cols="37" placeHolder="Ajouter un commentaire..."></textarea></td>
+							<td><textarea id="textarea_ajouter_commentaire" name="textarea_ajouter_commentaire" rows="4" cols="38">
+								<?php echo $hobby4; ?>
+							</textarea></td>
 						</tr>
 					</table>
 				</td>

@@ -109,21 +109,48 @@
 				</td>
 				<td>
 					<table class="infos_apropos">
+						<?php /*On recupere les infos à afficher*/
+							if($dbfound){
+								$sql = "SELECT *
+									FROM membre
+									WHERE IDmembre = '$IDauteur';";
+								$reqUTF8 = 'SET NAMES UTF8';//pour avoir les accents OK
+								mysqli_query($dbhandle, $reqUTF8);//pour avoir les accents OK
+								$result = mysqli_query($dbhandle, $sql);
+								while($data = mysqli_fetch_assoc($result)){
+									$entrepriseDeTravail = $data['entrepriseDeTravail'];
+									$domaineEntreprise = $data['domaineEntreprise'];
+									$stageJob = $data['stageJob'];
+									$ecolesEffectuees = $data['ecolesEffectuees'];
+								}
+							}
+							else{
+								echo "Base de donnée non trouvée.";
+							}
+						?>
 						<tr>
 							<td>Travaille à </td>
-							<td><textarea id="textarea_ajouter_commentaire" name="textarea_ajouter_commentaire" rows="4" cols="38" placeHolder="Ajouter un commentaire..."></textarea></td>
+							<td><textarea id="textarea_ajouter_commentaire" name="textarea_ajouter_commentaire" rows="4" cols="38">
+								<?php echo $entrepriseDeTravail; ?>
+							</textarea></td>
 						</tr>
 						<tr>
 							<td>Domaine</td>
-							<td><textarea id="textarea_ajouter_commentaire" name="textarea_ajouter_commentaire" rows="4" cols="38" placeHolder="Ajouter un commentaire..."></textarea></td>
+							<td><textarea id="textarea_ajouter_commentaire" name="textarea_ajouter_commentaire" rows="4" cols="38">
+								<?php echo $domaineEntreprise; ?>
+							</textarea></td>
 						</tr>
 						<tr>
 							<td>Stage/Jobs</td>
-							<td><textarea id="textarea_ajouter_commentaire" name="textarea_ajouter_commentaire" rows="4" cols="38" placeHolder="Ajouter un commentaire..."></textarea></td>
+							<td><textarea id="textarea_ajouter_commentaire" name="textarea_ajouter_commentaire" rows="4" cols="38">
+								<?php echo $stageJob; ?>
+							</textarea></td>
 						</tr>
 						<tr>
 							<td>Ecoles effectuée</td>
-							<td><textarea id="textarea_ajouter_commentaire" name="textarea_ajouter_commentaire" rows="4" cols="38" placeHolder="Ajouter un commentaire..."></textarea></td>
+							<td><textarea id="textarea_ajouter_commentaire" name="textarea_ajouter_commentaire" rows="4" cols="38">
+								<?php echo $ecolesEffectuees; ?>
+							</textarea></td>
 						</tr>
 					</table>
 				</td>
