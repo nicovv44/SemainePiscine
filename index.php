@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html>
+	<?php
+		session_start();
+		session_destroy();
+	?>
 	<head>
 		<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8" />
 		<title>Acceuil</title>
