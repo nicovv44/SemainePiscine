@@ -82,11 +82,12 @@
 
 		<div id="blocChronologie">
 			<div class="body_gauche">
-				<form id="form_exprimez_vous_ici" method="post" action="form_exprimez_vous_ici_Traitement.php">
+				<form id="form_exprimez_vous_ici" method="post" action="form_exprimez_vous_ici_Traitement.php" enctype="multipart/form-data">
 					<textarea id="textarea_exprimez_vous_ici" name="textarea_exprimez_vous_ici" rows="4" cols="70" placeHolder="Exprimez vous ici..."></textarea>
 					<div class="ecarteur">
-						<input type="submit" value="Poster"/>
-						<input type="file" value="pieceJointe"/>
+						<input type="submit" name="submit" value="Poster"/>
+						<input type="hidden" name="MAX_FILE_SIZE" value="100000000" />
+						<input type="file" name="pieceJointe"/>
 					</div>
 				</form>
 			</div>
