@@ -28,7 +28,7 @@
 							<a href="AuthentificationAdmin.php"><input type="button" value=" S'inscrire "></a>
 						</td>
 						<td>
-							<INPUT TYPE="submit" NAME="nom" VALUE=" Connexion ">
+							<INPUT TYPE="submit" NAME="nom" VALUE="Connexion">
 						</td>
 					</tr>
 				</table>
