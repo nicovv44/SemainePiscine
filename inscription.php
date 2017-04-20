@@ -1,48 +1,8 @@
-<?php
-/*Recuperation des valeurs:
-$pseudo=$_POST['pseudo'];
-$nom=$_POST['nom'];
-$prenom=$_POST['prenom'];
-$mail=$_POST['mail'];
-$rang=$_POST['rang'];
-$datedenaissance=$_POST['datedenaissance'];
-
-//On ouvre la base de donnée//
-		require("config.php");
-		$database = 'facebouc';
-		$dbhandle = mysqli_connect(DB_SERVER, DB_USER, DB_PASS);
-		$dbfound = mysqli_select_db($dbhandle, $database);
-
-	//si le BDD est trouvee, faire le traitement
-	if($db_found) {
-		if(!empty($pseudo)&&!empty($nom)&&!empty($prenom)&&!empty($mail)&&!empty($rang)&&!empty($datedenaissance)){ //vérification champs non vide
-			
-			//complete la bdd
-			$req = $bdd ->prepare('INSERT INTO infos_principales_utilisateur(pseudo, mdp, mail) VALUES(:pseudo, :mdp, :mail)');
-            $req->execute(array(
-            'pseudo' => $_POST['pseudo'],
-            'mdp' => $_POST['mdp'],
-            'mail' => $_POST['mail']
-            ));
-		
-		}
-		else{
-			echo "Vous n'avez pas rempli tous les champs";
-		}
-
-	else {
-		echo "La base de donnée n'a pas été trouvée";
-	}
-	
-//fermer la connection
-	//mysqli_close($db_handle);		
-*/
-?>
 
 <html>
 	<head>
 		<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8" />
-		<title>Acceuil</title>
+		<title>Inscription</title>
 		<link type="text/css" rel="stylesheet" href="style1.css">
 	</head>
 

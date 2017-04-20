@@ -10,7 +10,7 @@
 	?>
 	<head>
 		<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8" />
-		<title>Mes Amis</title>
+		<title>Photos</title>
 		<link type="text/css" rel="stylesheet" href="style1.css">
 	</head>
 	
