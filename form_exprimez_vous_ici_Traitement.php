@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
-	<?php /*On ouvre la base de donnée*/
+	<?php 
+		/*On ouvre la base de donnée*/
 		require("config.php");
 		$database = 'facebouc';
 		session_start();
@@ -82,7 +83,7 @@
 		
 		/*On redirige vers la page chronologie (la page de provenance)*/
 		header('Location: Chronologie.php');
-		/*header('refresh:5;url=Chronologie.php');*///pour le debub
+		/*header('refresh:5;url=Chronologie.php');*///pour le debug
 		exit();
 		
 		

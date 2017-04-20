@@ -49,21 +49,22 @@ $datedenaissance=$_POST['datedenaissance'];
 	<body>
 		<img id="imgTypePageA" src="images/bouc.png" alt="Logo bouc"/>
 		<h1 id="h1TypePageA">Inscription</h1>
+		<p style="text-align: center">Réservé aux administrateurs</p>
 		
 		<div class="box">
 			<form id="formInscription" method="post" action="InscriptionTraitement.php">
 				<input type="text" name="prenom" placeholder="Prénom"><br/>
 				<input type="text" name="nom" placeholder="Nom"><br/>
 				Date de naissance : 
-				<input type="date" name="dateEmbauche"/><br/>
+				<input type="date" name="dateNaissance"/><br/>
 				<input type="email" name="mail" placeholder="Mail"/><br/>
 				<input type="text" name="pseudo" placeholder="Pseudo"/><br/>
 				<select name="pays" id="pays">
-					<option value="membre">Membre</option>
+					<option value="auteur">Auteur</option>
 					<option value="admin">Administrateur</option>
 				</select><br/>
-				<input type="checkbox" id="cbox3" value="checkboxcg">Il a accepté les <a href="ConditionsGenerales.html">Conditions générales</a>
-				<input type="submit" value="Inscrire auteur"/>
+				<input type="checkbox" name="cg" id="cbox3" value="checkboxcg">Il a accepté les <a href="ConditionsGenerales.html">Conditions générales</a>
+				<input type="submit" value="Inscrire membre"/>
 			</form>
 		</div>
 			

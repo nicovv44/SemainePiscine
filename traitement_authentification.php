@@ -17,9 +17,9 @@
 			echo "$ceci <br/>";
 			
 			if($mail==$data['adresseMail'] && $pseudo==$data['pseudo'] && ("1"==$data['statut'])){
-				session_start();
-				$_SESSION['IDauteur']=$data['IDmembre'];
-				$_SESSION['pseudo']=$pseudo;
+				//session_start();
+				//$_SESSION['IDadmin']=$data['IDmembre'];
+				//$_SESSION['pseudo']=$pseudo;
 				header('Location: Inscription.php');
 				exit();
 			}
