@@ -1,5 +1,5 @@
 <?php
-//Recuperation des valeurs:
+/*Recuperation des valeurs:
 $pseudo=$_POST['pseudo'];
 $nom=$_POST['nom'];
 $prenom=$_POST['prenom'];
@@ -7,7 +7,7 @@ $mail=$_POST['mail'];
 $rang=$_POST['rang'];
 $datedenaissance=$_POST['datedenaissance'];
 
-/*On ouvre la base de donnée*/
+//On ouvre la base de donnée//
 		require("config.php");
 		$database = 'facebouc';
 		$dbhandle = mysqli_connect(DB_SERVER, DB_USER, DB_PASS);
@@ -27,15 +27,16 @@ $datedenaissance=$_POST['datedenaissance'];
 		
 		}
 		else{
-			echo "Vous n'avez pas rempli tous les champs"
+			echo "Vous n'avez pas rempli tous les champs";
 		}
 
 	else {
 		echo "La base de donnée n'a pas été trouvée";
-	};
+	}
 	
 //fermer la connection
 	//mysqli_close($db_handle);		
+*/
 ?>
 
 <html>

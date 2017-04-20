@@ -1,42 +1,30 @@
 <?php /*On ouvre la base de donnée*/
-	require("config.php");
+	require"config.php";
 	$database = 'facebouc';
-	session_start();
-	$IDauteur = $_SESSION['IDauteur'];
 	$dbhandle = mysqli_connect(DB_SERVER, DB_USER, DB_PASS);
 	$dbfound = mysqli_select_db($dbhandle, $database);
+	
 
-	function verification_login($pseudo,$mail){
-		session_start();
-		$loginOK=false;
-		if ($dbfound){
-			$req="SELECT pseudo, mail FROM membre WHERE pseudo='$pseudo' and mail='$mail';";
-			if ($res=($dbfound, $req)){
-				$tb=db_fetch($res);
-				if ($tb){
-					$ts="SELECT statut FROM membre WHERE pseudo='$pseudo' and mail='$mail';";
-					if($ts="1"){
-						$loginOK=true;
-						return $tb['pseudo'];
-					}
-				}
-			}
-			db_close($dbfound);
-		}
-		return 0;
-	}
-
-	$pseudo=$_POST['pseudo'];
 	$mail=$_POST['mail'];
-	$user=verification_login($pseudo,$mail);
-	if (!$user){
-		echo "erreur de connexion";
-		//<a href="index.php" /a>
-	}
-	else{
-		$_SESSION['pseudo']=$data['pseudo'];
-		$_SESSION['mail']=$data['mail'];
-		//<a href="inscription.php" /a>
-	}
+	$pseudo=$_POST['pseudo'];
+	
 
+	if ($dbfound){
+		$req="SELECT * FROM membre;";
+		$result=mysqli_query($dbhandle, $req);
+		while ($data=mysqli_fetch_assoc($result)){
+			$ceci=$data['adresseMail'];
+			echo "$ceci <br/>";
+			
+			if($mail==$data['adresseMail'] && $pseudo==$data['pseudo'] && ("1"==$data['statut'])){
+				session_start();
+				$_SESSION['IDauteur']=$data['IDmembre'];
+				$_SESSION['pseudo']=$pseudo;
+				header('Location: Inscription.php');
+				exit();
+			}
+		}
+		header('Location: AuthentificationAdmin.php');
+		exit();
+	}
 ?>
