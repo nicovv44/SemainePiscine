@@ -4,7 +4,7 @@
 		require("config.php");
 		$database = 'facebouc';
 		session_start();
-		$IDauteur = $_SESSION['IDauteur'];/*on definit arbitrairement un IDauteur (de la page en cours) pour les tests*/
+		$IDauteur = $_SESSION['IDauteur'];
 		$dbhandle = mysqli_connect(DB_SERVER, DB_USER, DB_PASS);
 		$dbfound = mysqli_select_db($dbhandle, $database);
 	?>

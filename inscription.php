@@ -7,27 +7,24 @@ $mail=$_POST['mail'];
 $rang=$_POST['rang'];
 $datedenaissance=$_POST['datedenaissance'];
 
+/*On ouvre la base de donnée*/
+		require("config.php");
+		$database = 'facebouc';
+		$dbhandle = mysqli_connect(DB_SERVER, DB_USER, DB_PASS);
+		$dbfound = mysqli_select_db($dbhandle, $database);
 
-//logs de la BDD
-define('DB.SERVER','localhost');
-	define('DB.USER','root');
-	define('DB.PASS', '');
-
-	//identifier la BDD
-	$database = "facebouc";
-	
-	//connecter l'utilisateur dans la BDD
-	$db_handle = mysqli_connect(DB_SERVER, DB_USER, DB_PASS);
-	$db_found = mysqli_select_db($db_handle, $database);
-	
-	
 	//si le BDD est trouvee, faire le traitement
 	if($db_found) {
 		if(!empty($pseudo)&&!empty($nom)&&!empty($prenom)&&!empty($mail)&&!empty($rang)&&!empty($datedenaissance)){ //vérification champs non vide
 			
 			//complete la bdd
-			INSERT INTO membre(adresseMail,pseudo,nom,prenom,statut,dateNaissance)
-			VALUES('$mail','$pseudo','$nom','$prenom','status','$datedenaissance')
+			$req = $bdd ->prepare('INSERT INTO infos_principales_utilisateur(pseudo, mdp, mail) VALUES(:pseudo, :mdp, :mail)');
+            $req->execute(array(
+            'pseudo' => $_POST['pseudo'],
+            'mdp' => $_POST['mdp'],
+            'mail' => $_POST['mail']
+            ));
+		
 		}
 		else{
 			echo "Vous n'avez pas rempli tous les champs"

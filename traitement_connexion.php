@@ -1,8 +1,6 @@
 <?php /*On ouvre la base de donnée*/
 	require"config.php";
 	$database = 'facebouc';
-	//$IDauteur = 2;
-	/*on definit arbitrairement un IDauteur (de la page en cours) pour les tests*/
 	$dbhandle = mysqli_connect(DB_SERVER, DB_USER, DB_PASS);
 	$dbfound = mysqli_select_db($dbhandle, $database);
 	
