@@ -82,11 +82,12 @@
 
 		<div id="blocChronologie">
 			<div class="body_gauche">
-				<form id="form_exprimez_vous_ici" method="post" action="form_exprimez_vous_ici_Traitement.php">
+				<form id="form_exprimez_vous_ici" method="post" action="form_exprimez_vous_ici_Traitement.php" enctype="multipart/form-data">
 					<textarea id="textarea_exprimez_vous_ici" name="textarea_exprimez_vous_ici" rows="4" cols="70" placeHolder="Exprimez vous ici..."></textarea>
 					<div class="ecarteur">
-						<input type="submit" value="Poster"/>
-						<input type="file" value="pieceJointe"/>
+						<input type="submit" name="submit" value="Poster"/>
+						<input type="hidden" name="MAX_FILE_SIZE" value="100000000" />
+						<input type="file" name="pieceJointe"/>
 					</div>
 				</form>
 			</div>
@@ -119,7 +120,8 @@
 					$sql = "SELECT * 
 						FROM contenu 
 						JOIN publication ON contenu.IDpublication = publication.IDpublication 
-						WHERE publication.IDmembre = '$IDauteur';";
+						WHERE publication.IDmembre = '$IDauteur'
+						ORDER BY publication.IDpublication DESC;";
 					$reqUTF8 = 'SET NAMES UTF8';//pour avoir les accents OK
 					mysqli_query($dbhandle, $reqUTF8);//pour avoir les accents OK
 					$result = mysqli_query($dbhandle, $sql);
@@ -128,7 +130,9 @@
 							$texte = $data['texte'];//on recupere le texte de la publication
 							echo "<p style='font-size: 20px;'>$texte</p>";
 							$lienPhoto = $data['lienPhoto'];//on recupere le lien de la photo de la publication (on suppose qu'il y a une photo (bug si il n'y en a pas...)
-							echo "<a href='$lienPhoto'><img src='$lienPhoto' alt='Photo de la publication' style='width: 400px'/></a>";
+							if($lienPhoto != 'images/'){
+								echo "<a href='$lienPhoto'><img src='$lienPhoto' alt='Photo de la publication' style='width: 400px'/></a>";
+							}
 							echo "
 								<form id='form_avis' method='post' action='form_avis_Traitement.php'>
 									<input type='submit' name='jaime' value='Jaime'/>
