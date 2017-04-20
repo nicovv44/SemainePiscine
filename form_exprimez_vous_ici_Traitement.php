@@ -75,8 +75,9 @@
 		
 		/*On insert la  photo dans la base de donnée*/
 		if($dbfound){
-			$sql = "INSERT INTO contenu (lienPhoto, IDpublication)
-				VALUES ('$lienTotalFichier', '$IDpublication')";
+			$texte = isset($_POST['textarea_exprimez_vous_ici'])?$_POST['textarea_exprimez_vous_ici']:"";
+			$sql = "INSERT INTO contenu (texte, lienPhoto, IDpublication)
+				VALUES ('$texte', '$lienTotalFichier', '$IDpublication')";
 			$reqUTF8 = 'SET NAMES UTF8';//pour avoir les accents OK
 			mysqli_query($dbhandle, $reqUTF8);//pour avoir les accents OK
 			$result = mysqli_query($dbhandle, $sql);
