@@ -7,23 +7,6 @@
 		$dbhandle = mysqli_connect(DB_SERVER, DB_USER, DB_PASS);
 		$dbfound = mysqli_select_db($dbhandle, $database);
 
-		/*
-		if($dbfound){
-			$sql = "SELECT * FROM membre WHERE IDmembre = '$IDauteur'";
-			$reqUTF8 = 'SET NAMES UTF8';//pour avoir les accents OK
-			mysqli_query($dbhandle, $reqUTF8);//pour avoir les accents OK
-			$result = mysqli_query($dbhandle, $sql);
-			while($data = mysqli_fetch_assoc($result)){
-				$lienPhotoCouverture = $data['lienPhotoCouverture'];
-				$style = '"'."background-image: url('$lienPhotoCouverture');".'"';
-				echo "<header  style=$style>";
-			}
-		}
-		else{
-			echo "Base de donnée non trouvée.";
-		}*/
-		
-		
 		
 		/*On vérifie le transfert du fichier et on recupère des données sur le fichier*/
 		$erreur = "";
@@ -41,7 +24,7 @@
 		/*On déplace le fichier et le renomant avec son nom unique*/
 		$lienTotalFichier = "images/$nomFichierAvecExtension";
 		$resultat = move_uploaded_file($_FILES['pieceJointe']['tmp_name'],$lienTotalFichier);
-		if ($resultat) echo "Transfert réussi";
+		if ($resultat) echo "Pièce jointe stockée.<br/>";
 		
 		/*On insert la publication (type photo) dans la base de donnée*/
 		if($dbfound){
@@ -51,7 +34,7 @@
 			$reqUTF8 = 'SET NAMES UTF8';//pour avoir les accents OK
 			mysqli_query($dbhandle, $reqUTF8);//pour avoir les accents OK
 			if(mysqli_query($dbhandle, $sql)){
-				echo "Publication posté. Redirection en cours...";
+				echo "Publication posté.<br/>";
 			}
 		}
 		else{
@@ -67,20 +50,24 @@
 			$result = mysqli_query($dbhandle, $sql);
 			while($data = mysqli_fetch_assoc($result)){
 				$IDpublication = $data['nombre'];
+				echo "IDpublication : " . $IDpublication . "<br/>";
 			}
 		}
 		else{
 			echo "Base de donnée non trouvée.";
 		}
 		
-		/*On insert la  photo dans la base de donnée*/
+		/*On insert la  photo/texte (contenu) dans la base de donnée*/
 		if($dbfound){
 			$texte = isset($_POST['textarea_exprimez_vous_ici'])?$_POST['textarea_exprimez_vous_ici']:"";
 			$sql = "INSERT INTO contenu (texte, lienPhoto, IDpublication)
 				VALUES ('$texte', '$lienTotalFichier', '$IDpublication')";
 			$reqUTF8 = 'SET NAMES UTF8';//pour avoir les accents OK
 			mysqli_query($dbhandle, $reqUTF8);//pour avoir les accents OK
-			$result = mysqli_query($dbhandle, $sql);
+			if(mysqli_query($dbhandle, $sql)){
+				echo "Contenu posté.<br/>";
+			}
+			
 		}
 		else{
 			echo "Base de donnée non trouvée.";

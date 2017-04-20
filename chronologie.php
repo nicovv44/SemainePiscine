@@ -120,7 +120,8 @@
 					$sql = "SELECT * 
 						FROM contenu 
 						JOIN publication ON contenu.IDpublication = publication.IDpublication 
-						WHERE publication.IDmembre = '$IDauteur';";
+						WHERE publication.IDmembre = '$IDauteur'
+						ORDER BY publication.IDpublication DESC;";
 					$reqUTF8 = 'SET NAMES UTF8';//pour avoir les accents OK
 					mysqli_query($dbhandle, $reqUTF8);//pour avoir les accents OK
 					$result = mysqli_query($dbhandle, $sql);
