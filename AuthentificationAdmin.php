@@ -11,7 +11,7 @@
 		
 		<h1 id="h1TypePageA">Authentification administrateur</h1>
 		
-		<form id="formTypePageA" action="A VOIR" method="post">
+		<form id="formTypePageA" action="traitement_authentification.php" method="post">
 			<table id="identification_TypePageA">
 				<tr>
 					<td>Pseudo</td><td><input type="text" name="pseudo"></td>

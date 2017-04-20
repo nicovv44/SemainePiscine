@@ -130,27 +130,26 @@
 						?>
 						<tr>
 							<td>Travaille à </td>
-							<td><textarea id="textarea_ajouter_commentaire" name="textarea_ajouter_commentaire" rows="4" cols="38">
+							<td><textarea id="textarea_ajouter_commentaire" name="textarea_ajouter_commentaire" rows="4" cols="35">
 								<?php echo $entrepriseDeTravail; ?>
 							</textarea></td>
 						</tr>
 						<tr>
 							<td>Domaine</td>
-							<td><textarea id="textarea_ajouter_commentaire" name="textarea_ajouter_commentaire" rows="4" cols="38">
+							<td><textarea id="textarea_ajouter_commentaire" name="textarea_ajouter_commentaire" rows="4" cols="35">
 								<?php echo $domaineEntreprise; ?>
 							</textarea></td>
 						</tr>
 						<tr>
 							<td>Stage/Jobs</td>
-							<td><textarea id="textarea_ajouter_commentaire" name="textarea_ajouter_commentaire" rows="4" cols="38">
+							<td><textarea id="textarea_ajouter_commentaire" name="textarea_ajouter_commentaire" rows="4" cols="35">
 								<?php echo $stageJob; ?>
 							</textarea></td>
 						</tr>
 						<tr>
 							<td>Ecoles effectuée</td>
-							<td><textarea id="textarea_ajouter_commentaire" name="textarea_ajouter_commentaire" rows="4" cols="38">
-								<?php echo $ecolesEffectuees; ?>
-							</textarea></td>
+							<td><textarea id="textarea_ajouter_commentaire" name="textarea_ajouter_commentaire" rows="4" cols="35" placeHolder="Ajouter un commentaire..."></textarea></td>
+
 						</tr>
 					</table>
 				</td>
