@@ -149,7 +149,9 @@
 						</tr>
 						<tr>
 							<td>Ecoles effectuée</td>
-							<td><textarea id="textarea_ajouter_commentaire" name="textarea_ajouter_commentaire" rows="4" cols="35" placeHolder="Ajouter un commentaire..."></textarea></td>
+							<td><textarea id="textarea_ajouter_commentaire" name="textarea_ajouter_commentaire" rows="4" cols="35">
+								<?php echo $ecolesEffectuees; ?>
+							</textarea></td>
 
 						</tr>
 					</table>
