@@ -149,7 +149,7 @@
 									FROM commentaire
 									JOIN membre ON commentaire.IDmembre = membre.IDmembre
 									WHERE IDpublication = '$IDpublication'
-									ORDER BY timeStamp DESC;";
+									ORDER BY timeStamp;";
 								$reqUTF8 = 'SET NAMES UTF8';//pour avoir les accents OK
 								mysqli_query($dbhandle, $reqUTF8);//pour avoir les accents OK
 								$result2 = mysqli_query($dbhandle, $sql2);
