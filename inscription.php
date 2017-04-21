@@ -1,45 +1,40 @@
-<!DOCTYPE html>
+
 <html>
-	<?php
-		session_start();
-		session_destroy();
-	?>
 	<head>
 		<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8" />
-		<title>Acceuil</title>
+		<title>Inscription</title>
 		<link type="text/css" rel="stylesheet" href="style1.css">
 	</head>
 
 	<body>
-		<div class="accueil">
-			<img src="images/bouc.png" alt="Logo bouc"/>
-			<div class="titreAccueil">
-				<div>Facebouc</div>
-			</div>
-			<form id="formAccueil" action="traitement_connexion.php" method="post">
-				<span class="typeTexteA">Connexion</span>
-				<table class="identification_acceuil">
-					<tr>
-						<td>Pseudo</td><td><input type="text" name="pseudo"></td>
-					</tr>	
-					<tr>
-						<td>Mail</td><td><input type="text" name="mail"></td>
-					</tr>			
-				</table>
-				<table class="bouton_acceuil">
-					<tr>
-						<td>
-							<a href="AuthentificationAdmin.php"><input type="button" value=" S'inscrire "></a>
-						</td>
-						<td>
-							<INPUT TYPE="submit" NAME="nom" VALUE="Connexion">
-						</td>
-					</tr>
-				</table>
+		<img id="imgTypePageA" src="images/bouc.png" alt="Logo bouc"/>
+		<h1 id="h1TypePageA">Inscription</h1>
+		<p style="text-align: center">Réservé aux administrateurs</p>
+		
+		<div class="box">
+			<form id="formInscription" method="post" action="InscriptionTraitement.php">
+				<input type="text" name="prenom" placeholder="Prénom"><br/>
+				<input type="text" name="nom" placeholder="Nom"><br/>
+				Date de naissance : 
+				<input type="date" name="dateNaissance"/><br/>
+				<input type="email" name="mail" placeholder="Mail"/><br/>
+				<input type="text" name="pseudo" placeholder="Pseudo"/><br/>
+				<select name="statut">
+					<option value="auteur">Auteur</option>
+					<option value="admin">Administrateur</option>
+				</select><br/>
+				<input type="checkbox" name="cg" id="cbox3" value="checkboxcg">Il a accepté les <a href="ConditionsGenerales.html">Conditions générales</a>
+				<input type="submit" value="Inscrire membre"/>
 			</form>
 		</div>
-		<div id="slogan">Avec Facebouc, partagez votre quotidien avec tous vos amis</div>
+			
+		<div class="ecarteur">
+			<a href="index.php"><input type="button" value="Retour accueil"></a>	
+			<a href="ImportationAuteur.php"><input type="button" value="Importer des auteurs depuis la base de données"></a>
+		</div>
+		
 	</body>
+	
 	<footer>
 			<a href="ConditionsGenerales.html">Conditions générales</a> <br/>
 			&copy; 2017 Mathilde Bridron <a href="mailto:mathilde.bridron@edu.ece.fr">mathilde.bridron@edu.ece.fr</a>, Alexandre Domanchin <a href="mailto:ad162414@edu.ece.fr">alexandre.domanchin@edu.ece.fr</a>, Nicolas VERHELST <a href="mailto:nicolas.verhelst@edu.ece.fr">nicolas.verhelst@edu.ece.fr</a><br/>

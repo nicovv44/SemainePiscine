@@ -1,33 +1,484 @@
 body{
-	background-image: url("images/backgroundImage1.jpg");
+	/*background-image: url("monde.jpg");*/
+	background-color: rgb(220,220,255);
 	//font-family: Arial, Helvetica, sans-serif;
+	margin-bottom: 200px;
+}
+
+/*=========================================================================================*/
+/*divers*/
+.ecarteur{
+	display: flex;
+	justify-content: space-around;
+}
+
+.surlignage{
+	background-color: white;
 }
 
 
+/*=========================================================================================*/
+/*types de texte*/
+.typeTexteA{
+	font-size: 25px;
+	font-weight: bold;
+}
+
+.typeTexteB{
+	position: relative;
+	bottom: 10px;
+	color: white;
+	background-color: black;
+	padding: 5px 10px;
+	font-size: 25px;
+	font-weight: bold;
+}
 
 
 /*=========================================================================================*/
 /*header*/
 header{
-	//
+	border-radius: 5px 5px;
+	box-shadow: 10px 10px 10px;
+	text-align: left;
+	float: center;
+	margin-left: auto;
+	margin-right: auto;
+	height: 200px;
+	width: 90%;
 }
 
+.miniLogoGauche{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+
+.photoProfil{
+	margin: 20px;
+}
 
 
 
 /*=========================================================================================*/
 /*nav*/
 nav{
-	//
+	display: flex;
+	justify-content: space-around;
+}
+
+nav ul{
+	display: flex;
+	padding: 0px;
+	margin-right: 20px;
+	text-align: center; /*pour centrer les texte dans les cases*/
+	font-weight: bold;
+}
+
+nav li{
+	display: block;/*Pour supprimer les point du unordered list*/
+}
+
+nav a, nav a:visited{
+	display: block;
+	padding: 10px;
+	margin: 3px;
+	width: 130px;/*Largeur des boutons*/
+	background-color: #0000FF;
+	border-style: outset;
+	color: white;/*Couleur du cadre des boutons*/
+	text-decoration: none;/*Pas de souslignage du text de la nav*/
+}
+
+nav a:hover, nav a:visited:hover{/*Souris au dessus d'un bouton*/
+	text-decoration: none;/*Pas de souslignage du text de la nav*/
+	background-color: rgb(101,147,100);
+}
+
+nav a.bontonNavSelected{/*Bouton selectionné*/
+	background-color: rgb(101,147,100);
+}
+
+
+
+
+/*=========================================================================================*/
+/*Accueil*/
+.accueil{
+	margin-top: 100px;
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+	display: flex;
+	justify-content: space-around;
+}
+
+.accueil img{
+	height: 200px;
+}
+
+.titreAccueil{
+	text-align: center;
+	height: 200px;
+	width: 300px;
+	font-size: 60px;
+	font-weight: bold;
+	font-family: 'LearningCurveProRegular', Arial, serif;
+}
+
+#formAccueil{
+	display: flex;
+	flex-direction: column;
+	margin-left: 30px;
+	align-self: flex-end;
+}
+
+.identification_acceuil{
+	width: 40%;
+	background-color: transparent;
+	text-align: center;
+	float: right;
+	margin-left: auto;
+	/*margin-right: 100px;*/
+	height: auto;
+	font-size: 15px;
+	font-weight: bold;
+	font-family: 'LearningCurveProRegular', Arial, serif;
+}
+
+.bouton_acceuil{
+	text-align: center;
+	background-color: transparent;
+	margin-left: auto;
+	margin-right: auto;
+	float: center;
+	height: auto;
+	width: 30%;
+}
+
+#slogan{
+	margin-top: 50px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+
+/*=========================================================================================*/
+/*typePageA*/
+
+#imgTypePageA{
+	height: 200px;
+	position: absolute;
+	top: 0px;
+}
+
+#h1TypePageA{
+	text-align: center;
+	margin-top: 200px;
+	margin-bottom: 40px;
+}
+
+#formTypePageA{
+	display: flex;
+	flex-direction: column;
+	margin: auto;
+}
+
+#identification_TypePageA{
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	font-size: 30px;
+	font-weight: bold;
+	font-family: 'LearningCurveProRegular', Arial, serif;
+}
+
+
+/*=========================================================================================*/
+/*conditions generales*/
+
+.conditions_generales{
+	width: 65%;
+	background-color: white;
+	text-align: center;
+	float: center;
+	margin-left: auto;
+	margin-right: auto;
+	height: auto;
+}
+	
+.conditions_entete{
+	background-color: white;
+	width:17%;
+	text-align: center;
+	margin-left: auto;
+	float: center;
+	margin-right: auto;
+	height: auto;
+	font-size: x-large;
+}
+.boutons_cg{
+	width: auto;
+	background-color: white;
+	text-align: center;
+	float: center;
+	margin-left: auto;
+	margin-right: auto;
+	height: auto;
+}
+#conteneur{
+	display:flex;
+	justify-content: space-around;
+}
+
+
+
+
+/*=========================================================================================*/
+/*page inscription*/
+
+#formInscription{
+	
+}
+
+.box{
+	width: 300px;
+	border: 2px solid black;
+	margin: auto;
+	margin-bottom: 30px;
+	padding: 20px;
 }
 
 
 
 
 
+
+/*=========================================================================================*/
+/*page chronologie*/
+#blocChronologie{
+	display: flex;
+	flex-direction: column;
+}
+
+.body_gauche{
+	background-color: white;
+	border-radius: 4px 4px;
+	margin-left: 20px;
+	width: 512px;
+	border-width:2px;
+	border-style:inset;
+	border-color:black;
+	margin-bottom: 10px;
+}
+
+.navigation_apropos{
+	margin-left: 25px;
+}
+
+.infos_apropos{
+	border-width:2px;
+	border-style:inset;
+	border-color:black;
+}
+
+#textarea_exprimez_vous_ici, #textarea_ajouter_commentaire{
+	resize:none;
+}
+
+/*=========================================================================================*/
+/*page Photos*/
+.bloc_de_photos{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
+.unePhoto img{
+	height: 200px;
+}
+
+.unePhoto div{
+	margin-bottom: 20px;
+}
+
+
+
+
+
+
+
+
+
+.body_gauche_menu{
+background-color: transparent;
+text-align: left;
+margin-left: 20px;
+float: left;
+width: 50%;
+}
+
+.menu{
+	text-align: center;
+	background-color: transparent;
+	width: 100%;
+}
+
+.album_menu{
+	text-align: center;
+	background-color: transparent;
+	margin-left: 20px;
+	margin-right: auto;
+	width: 50%;
+}
+.contact{
+	float:right;
+	width: 20%;
+	text-align: left;
+	padding-left: 5px;
+	height: 150px;
+	background-color: white;
+}
+.album{
+	text-align: center;
+	padding-bottom: 5px;
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-top: 5px;
+	width:100%;
+}
+.mes_amis{
+	text-align: center;
+	padding-bottom: 5px;
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-top: 5px;
+	width:100%;
+}
+.activite{
+	text-align: left;
+	width: auto;
+}
+
+.authentification_entete{
+	text-align: center;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	background-color: transparent;
+	width: 100%;
+}
+.authentification{
+	background-color: transparent;
+	text-align: center;
+	float: center;
+	margin-left: auto;
+	margin-right: auto;
+	height: 200px;
+	width: 50%;
+}
+.boutons_validation{
+	text-align: center;
+	background-color: transparent;
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.chronologie_exprimezvous{
+	float: center;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	height: auto;
+}
+
+.textarea_exprimez_vous_ici{
+	float: center;
+	text-align: center;
+	padding-left: auto;
+	margin-right: auto;
+	height: auto;
+}
+
+.chronologie_ajouterpiecesjointes{
+	float: left;
+	text-align: left;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.commentaire{
+	text-align: left;
+	float: left;
+	margin-left: 35px;
+	margin-right: auto;
+	width: 50%;
+	border-width:2px;
+	border-style:inset;
+	border-color:black;
+}
+
+.commentaire_parametre{
+	text-align: left;
+	float: left;
+	margin-left: auto;
+	margin-right: 20px;
+	width: 30%;
+}
+
+.image_publication{
+	width: 90%;
+	background-color: white;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	border-width:2px;
+	border-style:inset;
+	border-color:black;
+}
+.parametres_publication{
+	width: 90%;
+	background-color: white;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: left;
+}
+
+.identification_inscription{
+	width: 70%;
+	background-color: transparent;
+	text-align: left;
+	float: right;
+	margin-left: auto;
+	margin-right: 20px;
+	height: auto;
+}
+
+.bouton_inscription{
+	text-align: center;
+	background-color: transparent;
+	margin-left: auto;
+	margin-right: auto;
+	height: auto;
+	width: 100%;
+}
+
+.commentaire_publication{
+	border-width:0px;
+	border-style:inset;
+	border-color:black;
+	margin-top: 10px;
+	width: 100%;
+}
+
+.commentaire_publication th{
+	text-align: left;
+}
+
 /*=========================================================================================*/
 /*liens hypertext*/
-a{
+a, a:visited{
 	color: blue;
 }
 
@@ -44,6 +495,9 @@ a:hover{
 footer{
 	background-color: #aaa;
 	margin-top: 20px;
+	width: 100%;
+	position: fixed;
+	bottom: 0px;
 	font-style:italic;
 	font-size: small;
 	text-align: center;

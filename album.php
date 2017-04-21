@@ -1,48 +1,57 @@
 <!DOCTYPE html>
 <html>
-	<?php
-		session_start();
-		session_destroy();
-	?>
 	<head>
 		<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8" />
-		<title>Acceuil</title>
+		<title>Album</title>
 		<link type="text/css" rel="stylesheet" href="style1.css">
 	</head>
+	<header>
+		<tr>
+			<td><img src="bouc.jpg.png" alt="avis" style="width:100px;height:100px;"/></td><td><img src="bouc.jpg.png" alt="avis" style="width:150px;height:150px;"/></td><td align="left">nom auteur </td><td align="right">deconnexion</td>
+		</tr>
+	</header>
 
+	<br>
 	<body>
-		<div class="accueil">
-			<img src="images/bouc.png" alt="Logo bouc"/>
-			<div class="titreAccueil">
-				<div>Facebouc</div>
-			</div>
-			<form id="formAccueil" action="traitement_connexion.php" method="post">
-				<span class="typeTexteA">Connexion</span>
-				<table class="identification_acceuil">
-					<tr>
-						<td>Pseudo</td><td><input type="text" name="pseudo"></td>
-					</tr>	
-					<tr>
-						<td>Mail</td><td><input type="text" name="mail"></td>
-					</tr>			
-				</table>
-				<table class="bouton_acceuil">
-					<tr>
-						<td>
-							<a href="AuthentificationAdmin.php"><input type="button" value=" S'inscrire "></a>
-						</td>
-						<td>
-							<INPUT TYPE="submit" NAME="nom" VALUE="Connexion">
-						</td>
-					</tr>
-				</table>
-			</form>
+		<div class="body_gauche_menu">
+		<table class="menu">
+			<tr>
+				<td><a href="chronologie.php">Mur</a></td><td><a href="aproposvueglobale.php">A propos</a></td><td><a href="amis.php">Amis</a></td><td><a href="photo.php">Photo</a></td>
+			</tr>
+		</table>
 		</div>
-		<div id="slogan">Avec Facebouc, partagez votre quotidien avec tous vos amis</div>
+		<br><br><br><br>
+		<div class="body_gauche">
+		<table class="album_menu">
+			<tr>
+				<td><a href="photo.php">Photo</a></td><td></td><td><a href="album.php">Album</a></td><td></td>
+			</tr>
+		</table>
+		</div>
+		<br>
+		<div class="body_gauche">
+		<table class="album">
+			<tr>
+				<td>album</td><td>album</td><td>album</td>
+			</tr>
+			<tr>
+				<td>album</td><td>album</td><td>album</td>
+			</tr>
+			<tr>
+				<td>album</td><td>album</td><td>album</td>
+			</tr>
+		</table>
+		</div>
+		<div class="contact">
+			<h3>Contacts</h3>
+			<br>
+			Liste des contacts
+		</div>
 	</body>
+	<br><br><br><br><br><br><br><br><br><br><br><br>
 	<footer>
-			<a href="ConditionsGenerales.html">Conditions générales</a> <br/>
-			&copy; 2017 Mathilde Bridron <a href="mailto:mathilde.bridron@edu.ece.fr">mathilde.bridron@edu.ece.fr</a>, Alexandre Domanchin <a href="mailto:ad162414@edu.ece.fr">alexandre.domanchin@edu.ece.fr</a>, Nicolas VERHELST <a href="mailto:nicolas.verhelst@edu.ece.fr">nicolas.verhelst@edu.ece.fr</a><br/>
+			Hébergé par <br/>
+			&copy; 2017 Mathidle Bridron <a href="mailto:mathilde.bridron@edu.ece.fr">mathilde.bridron@edu.ece.fr</a>, Alexandre Domanchin <a href="mailto:ad162414@edu.ece.fr">alexandre.domanchin@edu.ece.fr</a>, Nicolas VERHELST <a href="mailto:nicolas.verhelst@edu.ece.fr">nicolas.verhelst@edu.ece.fr</a><br/>
 			Nombre de visites : 
 			<?php
 				$filename = 'nbrVisites.txt';
