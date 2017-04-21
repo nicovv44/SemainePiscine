@@ -170,12 +170,14 @@
 							}
 							
 							/*Pour AJOUTER un COMMENTAIRE==================================================*/
+							$IDpublication = $data['IDpublication'];//on recupère l'ID de la publication
 							echo "
 								<form id='ajouter_commentaire' method='post' action='ajouter_commentaire_Traitement.php'>
 									<textarea id='textarea_ajouter_commentaire' name='textarea_ajouter_commentaire' rows='4' cols='70' placeHolder='Ajouter un commentaire...'></textarea>
 									<div class='ecarteur'>
 										<input type='submit' value='Poster'/>
 										<input type='file' value='pieceJointe'/>
+										<input type='hidden' name='IDpublication' value='$IDpublication'/>
 									</div>
 								</form>";
 							
