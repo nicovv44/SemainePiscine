@@ -19,7 +19,7 @@
 				<input type="date" name="dateNaissance"/><br/>
 				<input type="email" name="mail" placeholder="Mail"/><br/>
 				<input type="text" name="pseudo" placeholder="Pseudo"/><br/>
-				<select name="pays" id="pays">
+				<select name="statut">
 					<option value="auteur">Auteur</option>
 					<option value="admin">Administrateur</option>
 				</select><br/>
