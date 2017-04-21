@@ -116,11 +116,11 @@
 			?>
 
 			
-			<?php /*On affiche les publication ===============================================================*/
+			<?php /*On affiche les publication ===================================================================*/
 				if($dbfound){
 					$sql = "SELECT * 
 						FROM contenu 
-						JOIN publication ON contenu.IDpublication = publication.IDpublication 
+						JOIN publication ON contenu.IDpublication = publication.IDpublication
 						WHERE publication.IDmembre = '$IDauteur'
 						ORDER BY publication.IDpublication DESC;";
 					$reqUTF8 = 'SET NAMES UTF8';//pour avoir les accents OK
@@ -141,15 +141,35 @@
 									<input type='submit' name='jerigole' value='Je rigole'/>
 									<input type='submit' name='grrr' value='Grrr'/>
 								</form>";
-							echo "
-								<table class='commentaire_publication'>
-									<tr>
-										<th>Utilisateur1</th>
-									</tr>
-									<tr>
-										<td>Commentaire1 Commentaire1 Commentaire1 Commentaire1 Commentaire1 Commentaire1 Commentaire1 Commentaire1 Commentaire1 Commentaire1 Commentaire1 </td>
-									</tr>
-								</table>";
+								
+							/*On AFFICHE les COMMENTAIRES======================================================*/
+							$IDpublication = $data['IDpublication'];//on recupère l'ID de la publication
+							if($dbfound){
+								$sql2 = "SELECT * 
+									FROM commentaire
+									JOIN membre ON commentaire.IDmembre = membre.IDmembre
+									WHERE IDpublication = '$IDpublication'
+									ORDER BY timeStamp DESC;";
+								$reqUTF8 = 'SET NAMES UTF8';//pour avoir les accents OK
+								mysqli_query($dbhandle, $reqUTF8);//pour avoir les accents OK
+								$result2 = mysqli_query($dbhandle, $sql2);
+								while($data2 = mysqli_fetch_assoc($result2)){
+									$textCommentaire = $data2['commentaire'];
+									$timeStampCommentaire = $data2['timeStamp'];
+									$nomPrenomCommentateur = $data2['prenom'] . " " . $data2['nom'];
+									echo "
+										<table class='commentaire_publication'>
+											<tr>
+												<th>$nomPrenomCommentateur  $timeStampCommentaire</th>
+											</tr>
+											<tr>
+												<td>$textCommentaire</td>
+											</tr>
+										</table>";
+								}
+							}
+							
+							/*Pour AJOUTER un COMMENTAIRE==================================================*/
 							echo "
 								<form id='ajouter_commentaire' method='post' action='ajouter_commentaire_Traitement.php'>
 									<textarea id='textarea_ajouter_commentaire' name='textarea_ajouter_commentaire' rows='4' cols='70' placeHolder='Ajouter un commentaire...'></textarea>
